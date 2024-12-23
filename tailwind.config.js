@@ -4,6 +4,10 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  fontFamily: {
+    roboto: ['Roboto', 'sans-serif'],
+    opensans: ['Open Sans', 'sans-serif'],
+  },
   theme: {
     extend: {},
   },
