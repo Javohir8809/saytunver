@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next"; // i18next ni chaqirish
+import Select from "react-select"; // react-select ni import qilish
 import saytlogo from "../assets/photo_2021-11-03_09-02-49.jpg";
 import bayroq from "../assets/bayroq.jpg";
 import Girb from "../assets/Gerb.png";
 import { FaMusic } from "react-icons/fa";
 import "../assets/style/font.css";
-
+import { MdArrowDropDown } from "react-icons/md";
+import { Link } from "react-router";
 const Header = () => {
   const { t, i18n } = useTranslation(); // i18next dan foydalanish
   const [fontSizeClass, setFontSizeClass] = useState("text-base");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Dropdownni boshqarish
-
+  const [isDropdownOpen2, setIsDropdownOpen2] = useState(false); // Dropdownni boshqarish
+  const [isDropdownOpen3, setIsDropdownOpen3] = useState(false);
+  const [isDropdownOpen4, setIsDropdownOpen4] = useState(false);
+  const [isDropdownOpen5, setIsDropdownOpen5] = useState(false);
+  const [isDropdownOpen6, setIsDropdownOpen6] = useState(false);
+  const [isDropdownOpen7, setIsDropdownOpen7] = useState(false);
   // Tildan kelib chiqib font o'lchamini boshqarish
   useEffect(() => {
     if (i18n.language === "ru") {
@@ -21,15 +28,29 @@ const Header = () => {
   }, [i18n.language]);
 
   // Tilni o'zgartirish
-  const handleLanguageChange = (e) => {
-    i18n.changeLanguage(e.target.value);
+  const handleLanguageChange = (selectedOption) => {
+    i18n.changeLanguage(selectedOption.value);
+  };
+
+  // Til variantlari
+  const languageOptions = [
+    { value: "uz", label: "O'zbek" },
+    { value: "ru", label: "Русский" },
+    { value: "en", label: "English" },
+  ];
+
+  const handleNavigation = (event) => {
+    const url = event.target.value;
+    if (url) {
+      window.location.href = url;
+    }
   };
 
   return (
-    <div>
-      <div className="flex items-center justify-between p-2 max-w-[1210px] mx-auto">
+    <div className="fixed  top-0 left-0 w-full bg-beige/90 backdrop-blur-md border-b border-gray-300 z-50 h-16">
+      <div className="flex items-center justify-between  py-2 px-[20px] max-w-[1210px] mx-auto">
         <div
-          className={`text-center items-center flex ml-4 gap-2 ${fontSizeClass}`}
+          className={`text-center items-center flex   gap-2 ${fontSizeClass}`}
         >
           <img
             src={bayroq}
@@ -51,119 +72,280 @@ const Header = () => {
             {t("mail")}
           </p>
           <span className="pl-2 text-[#337AB7] hover:text-blue-500 cursor-pointer">
-            Ishonch telefoni: <strong>+998770268254</strong>
+            Ishonch telefoni: <strong>+998557041174</strong>
           </span>
           <span className="hover:text-blue-500 cursor-pointer">|</span>
         </div>
 
-        <div className="ml-4">
-          <select
-            className="border p-2 rounded"
-            onChange={handleLanguageChange} // Tilni o'zgartirish
-            value={i18n.language}
-          >
-            <option value="uz">O'zbek</option>
-            <option value="ru">Русский</option>
-            <option value="en">English</option>
-          </select>
+        <div className="ml-4 w-38">
+          {/* Zamonaviy Select */}
+          <Select
+            options={languageOptions}
+            defaultValue={languageOptions.find(
+              (option) => option.value === i18n.language
+            )}
+            onChange={handleLanguageChange}
+            isSearchable={false}
+            className="react-select-container  "
+            classNamePrefix="react-select"
+          />
         </div>
       </div>
-      <div className="bg-white border-b-2 border-t-2 border-gray-300">
-        <div className="container max-w-[1210px] mx-auto">
-          <header className={`flex items-center py-2 ${fontSizeClass}`}>
-            <nav className="flex items-center w-full justify-between">
-              <ul className="flex items-center">
+      <div className="bg-[#1B6B50] text-white border-b-2 border-t-2  bg-beige/90 backdrop-blur-md  border-gray-300  ">
+        <div className="container max-w-[1210px] px-[20px] mx-auto">
+          <header className={`flex items-center  ${fontSizeClass}`}>
+            <nav className="flex items-center py-2 w-full justify-between">
+              <ul className="flex items-center gap-2 ">
                 <img
                   src={saytlogo}
                   alt="Logo"
                   className="h-15 w-[50px] h-auto"
                 />
-                <div className="max-w-[240px]">
+                <div className="max-w-[290px]">
                   <span className="text-[14px]">{t("university")}</span>
                 </div>
               </ul>
 
-              <ul className="flex items-center justify-between max-w-[800px] gap-2">
-              <li
-  className="relative"
-  onMouseEnter={() => setIsDropdownOpen(true)}
-  onMouseLeave={() => setIsDropdownOpen(false)}
->
-  <button
-    className="text-[#687074] font-sans relative hover:text-blue-500"
-    onClick={() => setIsDropdownOpen((prev) => !prev)} // Tugma bosilganda toggling
-  >
-    {t("filial")}
-  </button>
-  {isDropdownOpen && (
-    <ul
-      className="absolute left-0 top-full mt-2 text-blue rounded-md shadow-lg w-48 z-[1000] bg-white"
-      onMouseEnter={() => setIsDropdownOpen(true)} // Dropdown ichiga kirganda yopilmasin
-      onMouseLeave={() => setIsDropdownOpen(false)} // Dropdowndan chiqishda yopilsin
-    >
-      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-        TATU missiyasi
-      </li>
-      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-        Tuzilma
-      </li>
-      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-        Me'yoriy hujjatlar
-      </li>
-      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-        Umumiy ma'lumot
-      </li>
-      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-        Rekvizitlar
-      </li>
-      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-        Rektor virtual qabulxonasi
-      </li>
-      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-        Ochiq ma'lumotlar
-      </li>
+              <ul className="flex items-center justify-between  max-w-[800px] gap-3">
+                {/* Dropdown menu */}
+                <li
+                  className="relative"
+                  onMouseEnter={() => setIsDropdownOpen(true)} // Hover qilganda menyuni ochish
+                  onMouseLeave={() => setIsDropdownOpen(false)} // Hoverdan chiqganda menyuni yopish
+                >
+                  <button className=" text-white items-center font-sans relative hover:text-white flex  hover:bg-blue-500 ">
+                    {t("filial")}
+                  </button>
+                  {isDropdownOpen && (
+                    <ul
+                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      onMouseEnter={() => setIsDropdownOpen(true)}
+                      onMouseLeave={() => setIsDropdownOpen(false)}
+                    >
+                      {/* Ichki menyu */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        TATU missiyasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Tuzilma
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Me'yoriy hujjatlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Umumiy ma'lumot
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rekvizitlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rektor virtual qabulxonasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Ochiq ma'lumotlar
+                      </li>
                     </ul>
                   )}
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-[#687074] font-sans text-sm relative hover:text-blue-500"
-                  >
+
+                <li
+                  className="relative"
+                  onMouseEnter={() => setIsDropdownOpen2(true)} // Hover qilganda menyuni ochish
+                  onMouseLeave={() => setIsDropdownOpen2(false)} // Hoverdan chiqganda menyuni yopish
+                >
+                  <button className=" text-white items-center font-sans relative hover:text-white flex  hover:bg-blue-500 ">
                     {t("faoliyat")}
-                  </a>
+                  </button>
+                  {isDropdownOpen2 && (
+                    <ul
+                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      onMouseEnter={() => setIsDropdownOpen2(true)}
+                      onMouseLeave={() => setIsDropdownOpen2(false)}
+                    >
+                      {/* Ichki menyu */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        TATU missiyasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Tuzilma
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Me'yoriy hujjatlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Umumiy ma'lumot
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rekvizitlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rektor virtual qabulxonasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Ochiq ma'lumotlar
+                      </li>
+                    </ul>
+                  )}
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-[#687074] font-sans text-sm relative hover:text-blue-500"
-                  >
+
+                <li
+                  className="relative"
+                  onMouseEnter={() => setIsDropdownOpen3(true)} // Hover qilganda menyuni ochish
+                  onMouseLeave={() => setIsDropdownOpen3(false)} // Hoverdan chiqganda menyuni yopish
+                >
+                  <button className=" text-white items-center font-sans relative hover:text-white flex  hover:bg-blue-500 ">
                     {t("info")}
-                  </a>
+                  </button>
+                  {isDropdownOpen3 && (
+                    <ul
+                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      onMouseEnter={() => setIsDropdownOpen3(true)}
+                      onMouseLeave={() => setIsDropdownOpen3(false)}
+                    >
+                      {/* Ichki menyu */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        TATU missiyasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Tuzilma
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Me'yoriy hujjatlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Umumiy ma'lumot
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rekvizitlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rektor virtual qabulxonasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Ochiq ma'lumotlar
+                      </li>
+                    </ul>
+                  )}
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-[#687074] font-sans text-sm relative hover:text-blue-500"
-                  >
+
+                <li
+                  className="relative"
+                  onMouseEnter={() => setIsDropdownOpen4(true)} // Hover qilganda menyuni ochish
+                  onMouseLeave={() => setIsDropdownOpen4(false)} // Hoverdan chiqganda menyuni yopish
+                >
+                  <button className=" text-white items-center font-sans relative hover:text-white flex  hover:bg-blue-500 ">
                     {t("hujjatlar")}
-                  </a>
+                  </button>
+                  {isDropdownOpen4 && (
+                    <ul
+                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      onMouseEnter={() => setIsDropdownOpen4(true)}
+                      onMouseLeave={() => setIsDropdownOpen4(false)}
+                    >
+                      {/* Ichki menyu */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        TATU missiyasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Tuzilma
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Me'yoriy hujjatlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Umumiy ma'lumot
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rekvizitlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rektor virtual qabulxonasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Ochiq ma'lumotlar
+                      </li>
+                    </ul>
+                  )}
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-[#687074] font-sans text-sm relative hover:text-blue-500"
-                  >
-                    {t("talabalar")}
-                  </a>
+
+                <li
+                  className="relative"
+                  onMouseEnter={() => setIsDropdownOpen5(true)} // Hover qilganda menyuni ochish
+                  onMouseLeave={() => setIsDropdownOpen5(false)} // Hoverdan chiqganda menyuni yopish
+                >
+                  <button className=" text-white items-center font-sans relative hover:text-white flex  hover:bg-blue-500 ">
+                    {t("talabalar")}{" "}
+                  </button>
+                  {isDropdownOpen5 && (
+                    <ul
+                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      onMouseEnter={() => setIsDropdownOpen5(true)}
+                      onMouseLeave={() => setIsDropdownOpen5(false)}
+                    >
+                      {/* Ichki menyu */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        TATU missiyasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Tuzilma
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Me'yoriy hujjatlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Umumiy ma'lumot
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rekvizitlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rektor virtual qabulxonasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Ochiq ma'lumotlar
+                      </li>
+                    </ul>
+                  )}
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-[#687074] font-sans text-sm relative hover:text-blue-500"
-                  >
-                    {t("aloqa")}
-                  </a>
+
+                <li
+                  className="relative"
+                  onMouseEnter={() => setIsDropdownOpen6(true)} // Hover qilganda menyuni ochish
+                  onMouseLeave={() => setIsDropdownOpen6(false)} // Hoverdan chiqganda menyuni yopish
+                >
+                  <button className=" text-white items-center font-sans relative hover:text-white flex  hover:bg-blue-500 ">
+                    {t("aloqa")}{" "}
+                  </button>
+                  {isDropdownOpen6 && (
+                    <ul
+                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      onMouseEnter={() => setIsDropdownOpen6(true)}
+                      onMouseLeave={() => setIsDropdownOpen6(false)}
+                    >
+                      {/* Ichki menyu */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        TATU missiyasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Tuzilma
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Me'yoriy hujjatlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Umumiy ma'lumot
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rekvizitlar
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Rektor virtual qabulxonasi
+                      </li>
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Ochiq ma'lumotlar
+                      </li>
+                    </ul>
+                  )}
                 </li>
               </ul>
             </nav>

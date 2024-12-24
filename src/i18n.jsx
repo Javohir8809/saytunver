@@ -9,7 +9,7 @@ const  resources = {
       mail: "Pochta",
       filial: "FILIAL",
       talim: "TA'LIM",
-      info: "AXBOROT XIZMATI",
+      info: "AXBOROT XIZMATI  ",
       faoliyat: "FAOLIYAT",
       hujjatlar: "HUJJATLAR",
       talabalar: "TALABALARGA",
@@ -42,6 +42,7 @@ const  resources = {
       aloqa: "CONTACT",
     },
   },
+ 
 };
 
 

@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['HelveticaNeueCyr', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
       },
     },
   },
