@@ -22,7 +22,7 @@ const  resources = {
       mail: "Почта",
       filial: "ФИЛИАЛ",
       talim: "ОБРАЗОВАНИЕ",
-      info: "ИНФОРМАЦИОННАЯ СЛУЖБА",
+      info: "ИНФОРМАЦИОННАЯ",
       faoliyat: "ДЕЯТЕЛЬНОСТЬ",
       hujjatlar: "ДОКУМЕНТЫ",
       talabalar: "ДЛЯ СТУДЕНТОВ",
@@ -35,7 +35,7 @@ const  resources = {
       mail: "Mail",
       filial: "BRANCH",
       talim: "EDUCATION",
-      info: "INFORMATION SERVICE",
+      info: "INFORMATION ",
       faoliyat: "ACTIVITY",
       hujjatlar: "DOCUMENTS",
       talabalar: "FOR STUDENTS",
@@ -44,13 +44,13 @@ const  resources = {
   },
 };
 
-// i18n sozlamalari
+
 i18n.use(initReactI18next).init({
   resources,
-  lng: "uz", // Standart til
-  fallbackLng: "en", // Til topilmasa, fallback
+  lng: "uz", 
+  fallbackLng: "en", 
   interpolation: {
-    escapeValue: false, // XSS hujumlardan himoya (React uchun kerak emas)
+    escapeValue: false, 
   },
 });
 
