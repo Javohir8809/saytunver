@@ -1,3 +1,42 @@
-.font{
-    color: red;
+/* 600px dan kichik ekranlarda va landshaft holatda */
+@media (max-width: 1220px) {
+  .samdu {
+    display: none;
+  }
+  .menubtn {
+    display: none !important;
+  }
+  .menu_btn {
+    display: none;
+  }
+}
+.menubtn {
+  display: none;
+}
+
+@media (max-width: 845px) {
+  nav {
+    display: none;
+    flex-direction: column;
+  }
+  .samdu {
+    display: block;
+  }
+  .ul_sayt {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 749px) {
+  .li_ul {
+    display: none !important;
+  }
+  .menubtn {
+    display: block !important;
+  }
+  .navbar{
+    display: flex  !important;
+    align-items: center !important;
+  }
 }
