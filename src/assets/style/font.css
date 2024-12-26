@@ -3,6 +3,7 @@
   .samdu {
     display: none;
   }
+  
   .menubtn {
     display: none !important;
   }
@@ -17,8 +18,19 @@
 @media (max-width: 845px) {
   nav {
     display: none;
+    flex-wrap: wrap;
     flex-direction: column;
+   
+    /* flex-direction: column; */
   }
+  .navbarc{
+    flex-direction: column !important;
+  }
+.langui{
+  align-items: center;
+}
+
+  
   .samdu {
     display: block;
   }
@@ -35,8 +47,18 @@
   .menubtn {
     display: block !important;
   }
-  .navbar{
-    display: flex  !important;
-    align-items: center !important;
+  nav {
+    display: flex !important;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+}
+
+
+@media (max-width: 429px) {
+  .samdu {
+    display: none;
   }
 }
+

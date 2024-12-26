@@ -10,6 +10,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 
 import '../assets/style/font.css'
+import { Link } from "react-router";
 const Header = () => {
   const { t, i18n } = useTranslation(); // i18next dan foydalanish
   const [fontSizeClass, setFontSizeClass] = useState("text-base");
@@ -20,6 +21,14 @@ const Header = () => {
   const [isDropdownOpen5, setIsDropdownOpen5] = useState(false);
   const [isDropdownOpen6, setIsDropdownOpen6] = useState(false);
   const [isDropdownOpen7, setIsDropdownOpen7] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
+
+
+  const toggleMenu  = () => {
+    setIsActive(!isActive);
+  };
+  console.log(!isActive); 
   // Tildan kelib chiqib font o'lchamini boshqarish
   useEffect(() => {
     if (i18n.language === "ru") {
@@ -42,10 +51,10 @@ const Header = () => {
   ];
 
   return (
-    <div className="fixed  top-0 left-0 w-full bg-beige/90 backdrop-blur-md border-b border-gray-300 z-50 h-16">
-      <div className="flex items-center justify-between  py-2 px-[20px] max-w-[1210px] mx-auto">
+    <div className="fixed  top-0 left-0 w-full bg-beige/90 backdrop-blur-md  border-gray-300 z-50 h-16">
+      <div className=" navbarc  flex items-center justify-between  py-2 px-[20px] max-w-[1210px] mx-auto">
         <div
-          className={`text-center items-center flex   gap-2 ${fontSizeClass}`}
+          className={` herro  text-center items-center flex   gap-2 ${fontSizeClass}`}
         >
           <img
             src={bayroq}
@@ -72,8 +81,9 @@ const Header = () => {
           <span className="hover:text-blue-500 cursor-pointer">|</span>
         </div>
 
-        <div className="ml-4 w-38">
+        <div className="langui  ml-4 w-38 flex items-center">
           {/* Zamonaviy Select */}
+          <h1>Assemblerrghjfjhgjhgj</h1>
           <Select
             options={languageOptions}
             defaultValue={languageOptions.find(
@@ -86,7 +96,7 @@ const Header = () => {
           />
         </div>
       </div>
-      <div className="bg-[#1B6B50] text-white border-b-2 border-t-2  bg-beige/90 backdrop-blur-md  border-gray-300  ">
+      <div className="bg-[#1B6B50] text-white  bg-beige/90 backdrop-blur-md  border-gray-300  ">
         <div className="container max-w-[1210px] px-[20px] mx-auto">
           <header className={`flex items-center  ${fontSizeClass}`}>
             <nav className="navbar flex items-center py-2 w-full justify-between">
@@ -101,7 +111,10 @@ const Header = () => {
                 </div>
               </ul>
 
-              <ul className="li_ul flex items-center justify-between  max-w-[800px] gap-3">
+              <ul 
+  id="menu-id" 
+  className={` li_ul flex items-center justify-between max-w-[800px] gap-3`}
+>
                 {/* Dropdown menu */}
                 <li
                   className="relative flex"
@@ -254,9 +267,11 @@ const Header = () => {
                       onMouseLeave={() => setIsDropdownOpen4(false)}
                     >
                       {/* Ichki menyu */}
+                      <Link to={'/contact'}>
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
                         TATU missiyasi
                       </li>
+                      </Link>
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
                         Tuzilma
                       </li>
@@ -367,12 +382,22 @@ const Header = () => {
                
               </ul>
               
+
+              
              <ul>
-             <button className="menubtn" >
-                     <IoMenu className="w-10 h-10 "/>
-                     </button>
+             <button className={`menubtn ${isActive ? "active" : ""}`} onClick={toggleMenu}>
+        <IoMenu className={`w-10 h-10 ${isActive ? "text-red-500" : ""}`} />
+      </button>
              </ul>
             </nav>
+            <ul
+  id="menu-id"
+  className={`li_ul ${
+    isActive ? "block" : "hidden"
+  } lg:flex items-center justify-between max-w-[800px] gap-3`}
+>
+  
+</ul>
           </header>
         </div>
       </div>

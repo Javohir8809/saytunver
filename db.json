@@ -1,0 +1,65 @@
+{
+    "news": [
+      {
+        "id": 1,
+        "title": "Breaking News: New Product Launched",
+        "description": "We have just launched a new product in our store. Check it out now!",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        "date": "2024-12-25"
+      },
+      {
+        "id": 2,
+        "title": "Holiday Sale Starts Now",
+        "description": "Don't miss out on our amazing holiday sale. Discounts up to 50% off!",
+        "image": "https://images.pexels.com/photos/1108092/pexels-photo-1108092.jpeg",
+        "date": "2024-12-24"
+      },
+      {
+        "id": 3,
+        "title": "New Year Party Announcement",
+        "description": "Join us for a spectacular New Year party with music, drinks, and entertainment!",
+        "image": "https://storage.kun.uz/source/thumbnails/_medium/10/6O6huIMwR-3kwgseXc5xlzBftsN-9W7a_medium.jpg",
+        "date": "2024-12-31"
+      },
+      {
+        "id": 4,
+        "title": "Store Reopening After Renovation",
+        "description": "We're excited to announce the reopening of our store after renovations. Visit us today!",
+        "image": "https://images.pexels.com/photos/1591441/pexels-photo-1591441.jpeg",
+        "date": "2024-12-20"
+      }
+     
+    ],
+    "news2":[
+      {
+        "id": 5,
+        "title": "Sovuq tushdi, ammo uylarga issiqlik berilmayapti. Nega?",
+        "description": "Haftalik ob-havo taxminlaridan kelib chiqsak, haftaning 2-yarmida harorat ko‘tarilishi kutilyapti, bu esa hali-beri issiqlik berilmasligiga ishora bo‘la oladi.",
+        "image": "https://storage.kun.uz/source/thumbnails/_medium/10/FJnQF8yX2hAbAu2EcbnqGLFdOrN6h7rF_medium.jpg",
+        "date": "2024-12-15"
+      },
+      {
+        "id": 6,
+        "title": "Hokimlik balansidagi orderli uyni rasmiylashtirib berishni va’da qilgan shaxs ushlandi",
+        "description": "Mazkur holatlar yuzasidan Jinoyat kodeksining 25, 168-moddasi (firibgarlik) bilan jinoyat ishlari qo‘zg‘atilib, tergov.",
+        "image": "https://storage.kun.uz/source/10/v4-wTJN4ySIfbBz9YC1BC3_WxmLCRcd7.jpg",
+        "date": "2024-12-18"
+      },
+      {
+        "id": 7,
+        "title": "Boshqaruv xodimlarining cheklangan soni",
+        "description": "Boshqaruv xodimlarining cheklangan soni o‘zgarmaydi — har bir hokimlik uchun 61−70 birlik, shuningdek, boshqaruv ",
+        "image": "https://storage.kun.uz/source/10/zow-V1-wopoQe5IIDjeff9bBstXuyPkL.jpg",
+        "date": "2024-12-10"
+      },
+      {
+        "id": 8,
+        "title": "Toshkent shahar hokimi “Mablag‘ ajratish to‘g‘risida”gi qarorni imzoladi.",
+        "description": "oshkent shahar Iqtisodiyot va moliya bosh boshqarmasi 2024 yil Toshkent shahar mahalliy budjetiga tegishli o‘zgartirish kiritadi.",
+        "image": "https://storage.kun.uz/source/10/nfGc_Zv8776xr1Hv1aRiehiJZSDURTQ7.jpg",
+        "date": "2024-12-05"
+      }
+
+    ]
+  }
+  
