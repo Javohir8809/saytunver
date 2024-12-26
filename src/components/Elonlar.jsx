@@ -26,11 +26,11 @@ useEffect(() => {
             className="flex flex-col bg-white text-black rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105"
           >
             {/* Rasmni joylash */}
-            <div className="relative w-full h-64">
+            <div className="relative w-full h-auto">
               <img
                 src={yangiliklar.image}
                 alt={yangiliklar.title}
-                className="w-full h-full object-cover " // Hoverda rasm kattalashishi
+                className="w-full h-[160px] object-cover " // Hoverda rasm kattalashishi
               />
             </div>
             {/* Yangilik matni */}

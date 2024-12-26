@@ -16,30 +16,32 @@ const Foaltalabalar = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap gap-6 justify-between mt-5 ">
-      {talaba.map((malumot) => (
-        <div
-          key={malumot.id}
-          className="relative w-68 h-72 overflow-hidden rounded-lg shadow-md"
-        >
-          {/* Rasm */}
-          <img
-            className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
-            src={malumot.image}
-            alt={`${malumot["ism-fameliya"]}`}
-          />
-
-          {/* Yozuv */}
-          <div className="absolute bottom-0 w-full bg-black bg-opacity-60 text-white p-3 text-center">
-            <h3 className="text-lg m-0 line-clamp-2">
-              {malumot["ism-fameliya"]} {malumot["otasini-ismi"]}
-            </h3>
-            <p className="text-sm mt-1 line-clamp-2">
-              {malumot.guruhi || "Guruh ma'lum emas"}
-            </p>
+    <div>
+        <h1  className="mt-5 font-lato  text-4xl ">Foal Talabalar</h1>
+        <div className="flex flex-wrap gap-6 justify-between mt-5 ">
+        
+        {talaba.map((malumot) => (
+          <div
+            key={malumot.id}
+            className="relative w-68 h-72 overflow-hidden rounded-lg shadow-md"
+          >
+            <img
+              className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-110"
+              src={malumot.image}
+              alt={`${malumot["ism-fameliya"]}`}
+            />
+  
+            <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white p-3 text-center">
+              <h3 className="text-lg m-0 line-clamp-2">
+                {malumot["ism-fameliya"]} {malumot["otasini-ismi"]}
+              </h3>
+              <p className="text-sm mt-1 line-clamp-2">
+                {malumot.guruhi || "Guruh ma'lum emas"}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

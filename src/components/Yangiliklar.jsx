@@ -30,15 +30,15 @@ const Yangiliklar = () => {
             key={newsItem.id}
           >
             {/* Rasmni joylash */}
-            <div className="relative w-full h-64">
+            <div className="relative w-full h-auto">
               <img
                 src={newsItem.image}
                 alt={newsItem.title}
-                className="w-full h-full object-cover " // Hoverda rasm kattalashishi
+                className="w-full h-auto object-cover " // Hoverda rasm kattalashishi
               />
             </div>
             {/* Yangilik matni */}
-            <div className="px-4 py-3">
+            <div className="px-4 pb-3">
               <h2 className="text-xl font-medium text-black">
                 {newsItem.title}
               </h2>

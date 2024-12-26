@@ -12,7 +12,7 @@ const Haqida = () => {
         <div className="flex flex-col items-center">
           <FaUniversity size={50} className="text-white mb-4" />
           <h1 className="text-4xl font-bold text-yellow-300">
-            <Counter target={4} />
+            <Counter target={2} />
           </h1>
           <span className="text-lg">Fakultetlar</span>
         </div>
@@ -21,7 +21,7 @@ const Haqida = () => {
         <div className="flex flex-col items-center">
           <LuNotebookPen size={50} className="text-white mb-4" />
           <h1 className="text-4xl font-bold text-yellow-300">
-            <Counter target={20} />
+            <Counter target={5} />
           </h1>
           <span className="text-lg">Kafedralar</span>
         </div>
@@ -30,7 +30,7 @@ const Haqida = () => {
         <div className="flex flex-col items-center">
           <GiTeacher size={50} className="text-white mb-4" />
           <h1 className="text-4xl font-bold text-yellow-300">
-            <Counter target={200} />
+            <Counter target={148} />
           </h1>
           <span className="text-lg">O'qituvchilar</span>
         </div>
@@ -39,7 +39,7 @@ const Haqida = () => {
         <div className="flex flex-col items-center">
           <PiStudentBold size={50} className="text-white mb-4" />
           <h1 className="text-4xl font-bold text-yellow-300">
-            <Counter target={2400} />
+            <Counter target={2555} />
           </h1>
           <span className="text-lg">Talabalar</span>
         </div>
