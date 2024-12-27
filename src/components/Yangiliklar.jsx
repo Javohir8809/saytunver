@@ -7,7 +7,7 @@ const Yangiliklar = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/news")
+      .get(`http://localhost:4000/news`)
       .then((response) => {
         setData(response.data);
       })
