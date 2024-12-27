@@ -5,7 +5,6 @@ import Swaper from "../components/Swaper";
 import Yangiliklar from "../components/Yangiliklar";
 import Foaltalabalar from "../components/unverstet/Foaltalabalar";
 import Haqida from "../components/unverstet/Haqida";
-import Deriktor from "./Deriktor";
 
 const Home = () => {
   return (

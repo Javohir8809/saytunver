@@ -18,171 +18,109 @@ import { Navigation, Autoplay } from "swiper/modules";
 
 export default function Linksewaper() {
   return (
-    <div className="py-10">
-      <h1 className=" text-4xl font-bold mb-5 text-gray-800">
+    <div className="py-10 px-4">
+      <h1 className="text-3xl md:text-4xl font-bold mb-5 text-gray-800 text-center">
         Foydali havolalar
       </h1>
       <div className="w-full mx-auto">
-        <Swiper
-          navigation={true} 
-          autoplay={{
-            delay: 5000, 
-            disableOnInteraction: false,
-          }}
-          speed={1000} 
-          modules={[Navigation, Autoplay]}
-          className="mySwiper rounded-lg "
-        >
-          <SwiperSlide className="flex  gap-3   font-bold text-xl h-48">
-            <div className="bg-white   w-[400px] h-[150px] px-2 rounded-xl ">
-              <div className="flex  pt-5  justify-center">
-                <div className="w-[55px] h-auto">
-                  <img
-                    src={mygovuz}
-                    alt=""
-                    className="object-contain h-[20px]"
-                  />
-                </div>
-                <div>
-                  <p className="text-lg w-[300px] ">
-                    Yagona interaktiv davlat xizmatlari portali
-                  </p>
-                </div>
+      <Swiper
+  navigation={true}
+  autoplay={{
+    delay: 5000,
+    disableOnInteraction: false,
+  }}
+  speed={1000}
+  slidesPerView={3} // Default 3 ta slayd
+  spaceBetween={0} // Bo‘shliqni yo‘q qilish
+  breakpoints={{
+    300: {
+      slidesPerView: 1, // Mobil uchun 1 ta slayd
+      spaceBetween: 0, // Bo‘shliqni yo‘q qilish
+    },
+    640: {
+      slidesPerView: 2, // Planshet uchun 2 ta slayd
+      spaceBetween: 10, // Kichik bo‘shliq
+    },
+    1024: {
+      slidesPerView: 3, // Desktop uchun 3 ta slayd
+      spaceBetween: 20, // Kichik bo‘shliq
+    },
+  }}
+  modules={[Navigation, Autoplay]}
+  className="mySwiper rounded-lg bg-white"
+>
+
+          {/* Slayd 1 */}
+          <SwiperSlide className="h-[200px] flex items-center justify-center">
+            <div className="bg-white w-full max-w-[300px] h-full px-4 py-4 rounded-xl shadow-md flex flex-col justify-between items-center">
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  src={mygovuz}
+                  alt="MyGov"
+                  className="object-contain h-[50px] w-[50px]"
+                />
+                <p className="text-lg font-semibold text-center">
+                  Yagona interaktiv davlat xizmatlari portali
+                </p>
               </div>
-              <div className="text-left px-2 pt-9 pl-2">
+              <div className="text-left mt-2">
                 <a
-                  className="text-blue-500 underline hover:text-blue-700 pt-2"
                   href="https://my.gov.uz/oz"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-blue-500 underline hover:text-blue-700"
                 >
                   https://my.gov.uz/oz
                 </a>
               </div>
             </div>
+          </SwiperSlide>
 
-            <div className="bg-white   w-[400px] h-[150px] px-2 rounded-xl ">
-              <div className="flex  pt-5  justify-center">
-                <div className="w-[55px] h-auto">
-                  <img
-                    src={mlykutubxona}
-                    alt=""
-                    className="object-contain w-[100px] h-[10px]"
-                  />
-                </div>
-                <div>
-                  <p className="text-lg w-[300px] ">
-                    ALISHER NAVOIY NOMIDAGI O'ZBEKISTON MILLIY KUTUBXONASI
-                  </p>
-                </div>
+          {/* Slayd 2 */}
+          <SwiperSlide className="h-[200px] flex items-center justify-center">
+            <div className="bg-white w-full max-w-[300px] h-full px-4 py-4 rounded-xl shadow-md flex flex-col justify-between items-center">
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  src={mlykutubxona}
+                  alt="Kutubxona"
+                  className="object-contain h-[50px] w-[50px]"
+                />
+                <p className="text-lg font-semibold text-center">
+                  ALISHER NAVOIY NOMIDAGI O'ZBEKISTON MILLIY KUTUBXONASI
+                </p>
               </div>
-              <div className="text-left px-2 pt-3 pl-2 text-blue-500 underline hover:text-blue-700">
+              <div className="text-left mt-2">
                 <a
-                  className=" underline hover:text-blue-700"
-                  href=" http://natlib.uz/"
+                  href="http://natlib.uz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 underline hover:text-blue-700"
                 >
                   http://natlib.uz/
                 </a>
               </div>
             </div>
-
-            <div className="bg-white   w-[400px] h-[150px] px-2 rounded-xl ">
-              <div className="flex  pt-5  justify-center">
-                <div className="w-[55px] h-auto">
-                  <img
-                    src={ziyonet}
-                    alt=""
-                    className="object-contain h-[20px]"
-                  />
-                </div>
-                <div>
-                  <p className="text-lg w-[300px] ">Ziyonet ta'lim portali </p>
-                </div>
-              </div>
-              <div className="text-left px-2 pt-9 pl-2 ">
-                <a
-                  className="text-blue-500 underline hover:text-blue-700"
-                  href="https://ziyonet.uz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  https://ziyonet.uz
-                </a>
-              </div>
-            </div>
           </SwiperSlide>
-          <SwiperSlide className="flex items-center justify-center  gap-3   font-bold  h-48">
 
-            <div className="bg-white   w-[400px] h-[150px] px-2 rounded-xl ">
-              <div className="flex  pt-5  justify-center">
-                <div className="w-[55px] h-auto">
-                  <img src={gerb} alt="" className="object-contain h-[20px]" />
-                </div>
-                <div>
-                  <p className="text-lg w-[300px] ">
-                    {" "}
-                    O'zbekiston Respublikasi Prezidenti rasmiy veb-sayti{" "}
-                  </p>
-                </div>
+          {/* Slayd 3 */}
+          <SwiperSlide className="h-[200px] flex items-center justify-center">
+            <div className="bg-white w-full max-w-[300px] h-full px-4 py-4 rounded-xl shadow-md flex flex-col justify-between items-center">
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  src={ziyonet}
+                  alt="Ziyonet"
+                  className="object-contain h-[50px] w-[50px]"
+                />
+                <p className="text-lg font-semibold text-center">
+                  Ziyonet ta'lim portali
+                </p>
               </div>
-              <div className="text-left px-2 pt-9 pl-2 ">
+              <div className="text-left mt-2">
                 <a
-                  className="text-blue-500 underline hover:text-blue-700"
                   href="https://ziyonet.uz"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  https://ziyonet.uz
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-white   w-[400px] h-[150px] px-2 rounded-xl ">
-              <div className="flex  pt-5  justify-center">
-                <div className="w-[55px] h-auto">
-                  <img
-                    src={inavatsiyalar}
-                    alt=""
-                    className="object-contain h-[20px]"
-                  />
-                </div>
-                <div>
-                  <p className="text-lg w-[300px] ">
-                    O'zbekiston Respublikasi Oliy ta'lim, fan va innovatsiyalar
-                    vazirligi
-                  </p>
-                </div>
-              </div>
-              <div className="text-left px-2 pt-2 pl-2 ">
-                <a
                   className="text-blue-500 underline hover:text-blue-700"
-                  href="https://gov.uz/oz/edu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  https://gov.uz/oz/edu
-                </a>
-              </div>
-            </div>
-
-            <div className="bg-white   w-[400px] h-[150px] px-2 rounded-xl ">
-              <div className="flex  pt-5  justify-center">
-                <div className="w-[55px] h-auto">
-                  <img src={gerb} alt="" className="object-contain h-[20px]" />
-                </div>
-                <div>
-                  <p className="text-lg w-[300px] ">
-                    {" "}
-                    O'zbekiston Respublikasi Prezidenti rasmiy veb-sayti{" "}
-                  </p>
-                </div>
-              </div>
-              <div className="text-left px-2 pt-9 pl-2 ">
-                <a
-                  className="text-blue-500 underline hover:text-blue-700"
-                  href="https://ziyonet.uz"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
                   https://ziyonet.uz
                 </a>
@@ -190,7 +128,31 @@ export default function Linksewaper() {
             </div>
           </SwiperSlide>
 
-          <SwiperSlide className="flex items-center justify-center  gap-3   font-bold  h-48"></SwiperSlide>
+          {/* Slayd 4 */}
+          <SwiperSlide className="h-[200px] flex items-center justify-center">
+            <div className="bg-white w-full max-w-[300px] h-full px-4 py-4 rounded-xl shadow-md flex flex-col justify-between items-center">
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  src={gerb}
+                  alt="Gerb"
+                  className="object-contain h-[50px] w-[50px]"
+                />
+                <p className="text-lg font-semibold text-center">
+                  O'zbekiston Respublikasi Prezidenti rasmiy veb-sayti
+                </p>
+              </div>
+              <div className="text-left mt-2">
+                <a
+                  href="https://ziyonet.uz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 underline hover:text-blue-700"
+                >
+                  https://ziyonet.uz
+                </a>
+              </div>
+            </div>
+          </SwiperSlide>
         </Swiper>
       </div>
     </div>
