@@ -82,8 +82,6 @@ const Header = () => {
         </div>
 
         <div className="langui  ml-4 w-38 flex items-center">
-          {/* Zamonaviy Select */}
-          <h1>Assemblerrghjfjhgjhgj</h1>
           <Select
             options={languageOptions}
             defaultValue={languageOptions.find(

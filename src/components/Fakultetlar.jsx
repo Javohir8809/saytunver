@@ -10,10 +10,11 @@ const Fakultetlar = () => {
       <div className="flex justify-between gap-5">
         <div className=" border rounded-lg overflow-hidden  ">
           <img src={fakul1} alt="" />
-          <p className="text-center font-lato">
-            {" "}
+         <div className="bg-[#1B6B50] text-white py-4 h-14">
+         <p className="text-center font-lato">
             Raqamli talim va Iqdisod fakulteti
           </p>
+         </div>
         </div>
         <div className=" border rounded-lg overflow-hidden">
           <img src={fakul2} alt="" />
@@ -22,10 +23,7 @@ const Fakultetlar = () => {
             Pedagogika va tillarni o'qitish fakulteti
           </p>
         </div>
-        <div className=" border rounded-lg overflow-hidden">
-          <img src={fakul3} alt="" />
-          <p className="text-center"> Sirtqi bo'lim fakulteti</p>
-        </div>
+        
       </div>
     </div>
   );
