@@ -30,20 +30,20 @@ export default function Linksewaper() {
     disableOnInteraction: false,
   }}
   speed={1000}
-  slidesPerView={3} // Default 3 ta slayd
-  spaceBetween={0} // Bo‘shliqni yo‘q qilish
+  slidesPerView={3} 
+  spaceBetween={0} 
   breakpoints={{
     300: {
-      slidesPerView: 1, // Mobil uchun 1 ta slayd
-      spaceBetween: 0, // Bo‘shliqni yo‘q qilish
+      slidesPerView: 1, 
+      spaceBetween: 0, 
     },
     640: {
-      slidesPerView: 2, // Planshet uchun 2 ta slayd
-      spaceBetween: 10, // Kichik bo‘shliq
+      slidesPerView: 2, 
+      spaceBetween: 10,
     },
     1024: {
-      slidesPerView: 3, // Desktop uchun 3 ta slayd
-      spaceBetween: 20, // Kichik bo‘shliq
+      slidesPerView: 3, 
+      spaceBetween: 20, 
     },
   }}
   modules={[Navigation, Autoplay]}

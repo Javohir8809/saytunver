@@ -18,10 +18,11 @@ const Fakultetlar = () => {
         </div>
         <div className=" border rounded-lg overflow-hidden">
           <img src={fakul2} alt="" />
-          <p className="text-center">
-            {" "}
+         <div className="bg-[#1B6B50] text-white py-4 h-14">
+         <p className="text-center">
             Pedagogika va tillarni o'qitish fakulteti
           </p>
+         </div>
         </div>
         
       </div>

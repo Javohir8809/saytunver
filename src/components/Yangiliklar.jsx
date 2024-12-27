@@ -17,32 +17,36 @@ const Yangiliklar = () => {
   }, []);
 
   return (
-    <div>
-      <h1 className="text-center font-lato text-2xl font-semibold py-5">
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-center font-lato text-2xl md:text-3xl font-semibold py-5">
         Eng So'ngi Yangiliklar
       </h1>
 
-      {/* Birinchi yangiliklar bo'limi */}
+      {/* Grid tuzilmasi */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {data.map((newsItem) => (
           <Link
             to={`/news/${newsItem.id}`}
-            key={newsItem.id} 
-            className="flex flex-col bg-white text-black rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105"
+            key={newsItem.id}
+            className="flex flex-col bg-white text-black rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
           >
-            {/* Rasmni joylash */}
-            <div className="relative w-full h-auto">
+            {/* Tasvir */}
+            <div className="relative w-full h-56 sm:h-48 md:h-40 lg:h-56">
               <img
                 src={newsItem.image}
                 alt={newsItem.title}
-                className="w-full h-auto object-cover" 
+                className="w-full h-full object-cover"
               />
             </div>
             {/* Yangilik matni */}
-            <div className="px-4 pb-3">
-              <h2 className="text-xl font-medium text-black">{newsItem.title}</h2>
-              <p className="text-sm text-gray-600">{newsItem.description}</p>
-              <p className="text-xs text-gray-500 pt-2">
+            <div className="px-4 py-3 flex flex-col justify-between">
+              <h2 className="text-base sm:text-lg md:text-xl font-medium text-black mb-2">
+                {newsItem.title}
+              </h2>
+              <p className="text-sm text-gray-600 line-clamp-2">
+                {newsItem.description}
+              </p>
+              <p className="text-xs text-gray-500 mt-3">
                 <strong>Published on:</strong> {newsItem.date}
               </p>
             </div>
