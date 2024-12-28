@@ -1,20 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-const apiUrl = import.meta.env.VITE_REACT_URL;
+// const apiUrl = import.meta.env.VITE_REACT_URL;
 const Elonlar = () => {
   const [news, setNews] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get(`${apiUrl}`)
-      .then((response) => {
-        setNews(response.data);
-      })
-      .catch((error) => {
-        console.log("Yangiliklar malumotlarini olishda xatolik", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${apiUrl}`)
+  //     .then((response) => {
+  //       setNews(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Yangiliklar malumotlarini olishda xatolik", error);
+  //     });
+  // }, []);
 
   return (
     <div className="container  max-w-[1210px] mx-auto px-4 py-8 ">

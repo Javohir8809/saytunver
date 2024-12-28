@@ -6,17 +6,17 @@ const ElonlarDetails = () => {
   const { id } = useParams(); 
   const [newsItem, setNewsItem] = useState(null);
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:4000/news2/${id}`) // Backend API
-      .then((response) => {
-        console.log("API javobi:", response.data); 
-        setNewsItem(response.data);
-      })
-      .catch((error) => {
-        console.error("Yangilikni olishda xatolik:", error);
-      });
-  }, [id]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`http://localhost:4000/news2/${id}`) // Backend API
+  //     .then((response) => {
+  //       console.log("API javobi:", response.data); 
+  //       setNewsItem(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Yangilikni olishda xatolik:", error);
+  //     });
+  // }, [id]);
 
   if (!newsItem) return <p>Ma'lumotlar yuklanmoqda yoki mavjud emas...</p>;
 

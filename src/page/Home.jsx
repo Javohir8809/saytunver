@@ -14,7 +14,7 @@ const Home = () => {
         <Foydali/>
         <Yangiliklar />
         <Elonlar />
-        <Fakultetlar />
+        {/* <Fakultetlar /> */}
         <Haqida/>
         <Foaltalabalar/>
       </div>
