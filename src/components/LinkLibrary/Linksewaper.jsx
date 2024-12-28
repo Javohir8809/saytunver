@@ -18,7 +18,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 
 export default function Linksewaper() {
   return (
-    <div className="py-10 px-4">
+    <div className="py-10 px-4 container  max-w-[1210px] mx-auto ">
       <h1 className="text-3xl md:text-4xl font-bold mb-5 text-gray-800 text-center">
         Foydali havolalar
       </h1>

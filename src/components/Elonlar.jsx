@@ -17,7 +17,7 @@ const Elonlar = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8 ">
+    <div className="container  max-w-[1210px] mx-auto px-4 py-8 ">
       <h1 className="text-center font-lato text-2xl md:text-3xl font-semibold py-5 mt-10 mb-5">
         So'nggi E'lonlar
       </h1>

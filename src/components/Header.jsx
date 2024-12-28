@@ -22,10 +22,12 @@ const Header = () => {
   const [isDropdownOpen6, setIsDropdownOpen6] = useState(false);
   const [isDropdownOpen7, setIsDropdownOpen7] = useState(false);
   const [isActive, setIsActive] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modalni boshqarish
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   const navigate = useNavigate();
-  const handleNavigate = () => {
-    navigate("/Saytxaretasi"); // Navigatsiya qilingadigan manzil
-  };
+
   const toggleMenu = () => {
     setIsActive(!isActive);
   };
@@ -115,6 +117,7 @@ const Header = () => {
                 className={` li_ul flex items-center justify-between max-w-[800px] gap-3`}
               >
                 {/* Dropdown menu */}
+                {/* FILIAL */}
                 <li
                   className="relative flex"
                   onMouseEnter={() => setIsDropdownOpen(true)} // Hover qilganda menyuni ochish
@@ -129,36 +132,314 @@ const Header = () => {
                   </button>
                   {isDropdownOpen && (
                     <ul
-                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
-                      onMouseEnter={() => setIsDropdownOpen(true)}
-                      onMouseLeave={() => setIsDropdownOpen(false)}
+                    className="absolute left-0 top-full shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                    onMouseEnter={() => setIsDropdownOpen(true)}
+                    onMouseLeave={() => setIsDropdownOpen(false)}
+                  >
+                    {/* Filial haqida */}
+                    <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                      Filial haqida
+                      <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          Filial ustavi
+                        </li>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          Filial nizomi
+                        </li>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          Filial tuzulmasi
+                        </li>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          Rekvizitlar
+                        </li>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          Aloqa
+                        </li>
+                      </ul>
+                    </li>
+                  
+                    {/* Hujjatlar */}
+                    <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                      Hujjatlar
+                      <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          Qonunlar
+                        </li>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          Farmonlar
+                        </li>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          Qarorlar
+                        </li>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          Nizomlar va qoidalar
+                        </li>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          Hisobotlar
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                  
+                  )}
+                </li>
+
+                {/* Yangiliklar */}
+                <li
+                  className="relative flex"
+                  onMouseEnter={() => setIsDropdownOpen3(true)} // Hover qilganda menyuni ochish
+                  onMouseLeave={() => setIsDropdownOpen3(false)} // Hoverdan chiqganda menyuni yopish
+                >
+                  <button className="flex items-center gap-1 hover:text-yellow-400">
+                    <MdArrowDropDown />
+                  </button>
+                  <button className="text-white items-center font-sans relative hover:text-white flex">
+                    {t("info")}
+                  </button>
+                  {isDropdownOpen3 && (
+                    <ul
+                      className="absolute left-0 top-full shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      onMouseEnter={() => setIsDropdownOpen3(true)}
+                      onMouseLeave={() => setIsDropdownOpen3(false)}
                     >
-                      {/* Ichki menyu */}
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        TATU missi
+                      {/* Yangiliklar */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        <Link to="/Oliytalimyangiliklari">Yangiliklar</Link>
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Yig'ilishlar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Uchrashuvlar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Seminarlar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Davra suhbatlari
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Tashriflar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Brifinglar
+                          </li>
+                        </ul>
                       </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Tuzilma
+
+                      {/* E'lonlar */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        <Link to="/Omaviytadbirlar">E'lonlar</Link>
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Yig'ilishlar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Uchrashuvlar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Davra suhbatlari
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Tashriflar
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Brifinglar
+                          </li>
+                        </ul>
                       </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Me'yoriy hujjatlar
+
+                      {/* Fotogalerya */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        <Link to="/Elonlar">Fotogalerya</Link>
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Universitet fotogaleryasi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Tadbir fotogaleryasi
+                          </li>
+                        </ul>
                       </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Umumiy ma'lumot
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rekvizitlar
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rektor virtual qabulxonasi
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Ochiq ma'lumotlar
+
+                      {/* Videogalerya */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Videogalerya
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Universitet videolar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Tadbir videolari
+                          </li>
+                        </ul>
                       </li>
                     </ul>
                   )}
                 </li>
 
+                {/* Tuzulma */}
+                <li
+                  onMouseEnter={() => setIsDropdownOpen6(true)} // Hover qilganda menyuni ochish
+                  onMouseLeave={() => setIsDropdownOpen6(false)} // Hoverdan chiqganda menyuni yopish
+                  className="relative flex"
+                >
+                  <button className="flex items-center gap-1 hover:text-yellow-400">
+                    <MdArrowDropDown />
+                  </button>
+                  <button className="text-white items-center font-sans relative hover:text-white flex">
+                    {t("tuzulma")}
+                  </button>
+                  {isDropdownOpen6 && (
+                    <ul
+                      className="absolute left-0 top-full shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      onMouseEnter={() => setIsDropdownOpen6(true)}
+                      onMouseLeave={() => setIsDropdownOpen6(false)}
+                    >
+                      {/* Rahbariyat */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Rahbariyat
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Filial direktori
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Direktor o'rinbosarlari
+                          </li>
+                        </ul>
+                      </li>
+
+                      {/* Fakultetlar */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Fakultetlar
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Pedagogika va tillarni o'qitish
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Aniq va tabiiy fanlar
+                          </li>
+                        </ul>
+                      </li>
+
+                      {/* Kafedralar */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Kafedralar
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Maktabgacha va boshlang'ich ta'lim, sport kafedrasi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            O'zbek tili gumanitar fanlar kafedrasi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Xorijiy tillar kafedrasi
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Raqamli texnologiyalar va iqtisodiyot kafedrasi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Aniq va tabiy fanlar kafedrasi
+                          </li>
+                        </ul>
+                      </li>
+
+                      {/* Markazlar */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Markazlar
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Raqamli texnologiyalari markazi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Axborot-resurs markazi
+                          </li>
+                        </ul>
+                      </li>
+
+                      {/* Bo'limlar */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Bo'limlar
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            O'quv-uslubiy boshqarma
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
+                          Ta'lim sifatini nazorat qilish bo'limi
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
+                          Jismoniy va yuridik shaxslarning murojatlari bilan
+                          ishlash, nazorat va monitoring sektori
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
+                          Yoshlar bilan ishlash ma'naviyat va ma'rifat bo'limi
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
+                          Ilmiy tadqiqotlar, innovatsiyalar sektori
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
+                          Talabalarni turar joy bilan ta'minlash ishlarini
+                          muvofiqlashtiruvchi bo'lim
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
+                          Psixolog
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
+                          Iqtidorli talabalarning ilmiy-tadqiqot faolyatini
+                          tashkil etish sektori
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
+                          Buxgalteriya
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
+                          Bosh auditor
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Xodimlar bo'limi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Xalqaro hamkorlik bo'limi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            1-bo'lim
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Marketing va talabalar amaliyoti bo'lim
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Yuristkonsult
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Matbuot kotibi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Reja-moliya bo'limi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Devonxona va arxiv bo'limi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Sirtqi bo'lim
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Devonxona va arxiv bo'limi Korrupsiyaga qarshi
+                            kurashish "Komplaens-nazorat" tizmini boshqarish
+                            bo'limi
+                          </li>
+                        </ul>
+                      </li>
+
+                      {/* O'quv jarayoni */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        O'quv jarayoni
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Dars jadvali
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            O'quv dasturlari
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  )}
+                </li>
+
+                {/* FAOLYAT */}
                 <li
                   className="relative flex"
                   onMouseEnter={() => setIsDropdownOpen2(true)} // Hover qilganda menyuni ochish
@@ -168,79 +449,177 @@ const Header = () => {
                     <MdArrowDropDown />
                   </button>
 
-                  <button className=" text-white items-center font-sans relative hover:text-white flex  ">
+                  <button className="text-white items-center font-sans relative hover:text-white flex">
                     {t("faoliyat")}
                   </button>
                   {isDropdownOpen2 && (
                     <ul
-                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      className="absolute left-0 top-full shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
                       onMouseEnter={() => setIsDropdownOpen2(true)}
                       onMouseLeave={() => setIsDropdownOpen2(false)}
                     >
-                      {/* Ichki menyu */}
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        TATU missiyasii
+                      {/* O'quv jarayoni */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        O'quv jarayoni
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Yakuniy nazorat savollar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Malaka talablari
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            O'quv rejalar
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            O'quv dasturlari
+                          </li>
+                        </ul>
                       </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Tuzilma
+
+                      {/* Ilmiy faoliyat */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Ilmiy faoliyat
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Ilmiy to'plam va ommabop maqolalar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Istiqboldagi rejalar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Konferensiyalar
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Ilmiy faoliyat e'lon va yangiliklar
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Mening innovatsiyon g'oyam
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Filial loyihalar
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Aftoreferatlar
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Ilmiy jurnallar
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Filial kengashi
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Ilmiy tadqiqot yo'nalishlar
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Ustoz-shogirt maktabi
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Nashr ishlari
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Yosh olimlar maktabi
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Ilmiy-tadqiqot faolyati
+                          </li>
+                        </ul>
                       </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Me'yoriy hujjatlar
+
+                      {/* Ma'naviy-ma'rifiy faoliyat */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Ma'naviy-ma'rifiy faoliyat
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Talabalar hayoti
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Tyutor faolyati
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Filial psixologi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            <Y></Y>otoqxona
+                          </li>
+                        </ul>
                       </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Umumiy ma'lumot
+
+                      {/* Moliyaviy faoliyati */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Moliyaviy faoliyat
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Shartnomalar namunasi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Harajatlar smetasi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Tuzulgan Shartnomalar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Davlat haridlari to'g'risidagi malumotlar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Mansabdor shaxslarning xizmat safarlari va xorijdan
+                            tashrif buyurgan mehmonlarni kutib olish harajatlari
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Harid qilinishi rejalashtirilgan tovarlari
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Davlat haridlari va invesstitsiya loyihalari
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Tasdiqlangan yillik harajatlar smetasi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Kuchmas mulklar to'g'risidagi
+                          </li>
+                        </ul>
                       </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rekvizitlar
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rektor virtual qabulxonasi
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Ochiq ma'lumotlar
+
+                      {/* Ta'lim sifati */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Ta'lim sifati
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Ta'lim dasturi katalogi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Yo'l haritasi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Talabalar tashabbusi
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Anonim so'rovnoma
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Ta'lim sifat so'rovnoma
+                          </li>
+                        </ul>
                       </li>
                     </ul>
                   )}
                 </li>
 
-                <li
-                  className="relative flex"
-                  onMouseEnter={() => setIsDropdownOpen3(true)} // Hover qilganda menyuni ochish
-                  onMouseLeave={() => setIsDropdownOpen3(false)} // Hoverdan chiqganda menyuni yopish
-                >
-                  <button className="flex items-center gap-1 hover:text-yellow-400">
-                    <MdArrowDropDown />
-                  </button>
-
-                  <button className=" text-white items-center font-sans relative hover:text-white flex ">
-                    {t("info")}
-                  </button>
-                  {isDropdownOpen3 && (
-                    <ul
-                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
-                      onMouseEnter={() => setIsDropdownOpen3(true)}
-                      onMouseLeave={() => setIsDropdownOpen3(false)}
-                    >
-                      <Link to='/Oliytalimyangiliklari'>
-                        <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                          Oliy talim yangiliklari
-                        </li>
-                      </Link>
-
-                     <Link to="/Omaviytadbirlar">
-                     <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Omaviy Tadbirlar
-                      </li>
-                     </Link>
-                     <Link to='/Elonlar'>
-                     <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Elonlar
-                      </li>
-                     </Link>
-                    </ul>
-                  )}
-                </li>
-
+                {/* Qabul24 */}
                 <li
                   className="relative flex"
                   onMouseEnter={() => setIsDropdownOpen4(true)} // Hover qilganda menyuni ochish
@@ -250,43 +629,67 @@ const Header = () => {
                     <MdArrowDropDown />
                   </button>
 
-                  <button className=" text-white items-center font-sans relative hover:text-white flex ">
-                    {t("hujjatlar")}
+                  <button className="text-white items-center font-sans relative hover:text-white flex">
+                    {t("QABUL2024")}
                   </button>
                   {isDropdownOpen4 && (
                     <ul
-                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      className="absolute left-0 top-full shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
                       onMouseEnter={() => setIsDropdownOpen4(true)}
                       onMouseLeave={() => setIsDropdownOpen4(false)}
                     >
-                      {/* Ichki menyu */}
-                      <Link to={"/contact"}>
-                        <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                          TATU missiyasi
-                        </li>
-                      </Link>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Tuzilma
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Me'yoriy hujjatlar
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Umumiy ma'lumot
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rekvizitlar
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rektor virtual qabulxonasi
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Ochiq ma'lumotlar
+                      {/* Bakalavriat */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Bakalavriat
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Eslatma
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Qabul nizomi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Qabul kvotasi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Hujjatlar to‘plami
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Imtihon fanlari ro‘yxati
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Qabul komissiyasi joylashuv o‘rni
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Kall markazi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            O'tish ballari
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Ikkinchi va undan keyingi oliy ta'lim
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            O'qishni ko'chirish qayta tiklash
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Ko‘zi ojizlar uchun o'tkaziladigan fan bo'yicha
+                            kirish imtihonlarining dasturlari
+                          </li>
+
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Texnikum bitiruvchilari qabul qilish
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Ijodiy intihonlar
+                          </li>
+                        </ul>
                       </li>
                     </ul>
                   )}
                 </li>
 
+                {/* Talabalarga */}
                 <li
                   className="relative flex"
                   onMouseEnter={() => setIsDropdownOpen5(true)} // Hover qilganda menyuni ochish
@@ -295,86 +698,83 @@ const Header = () => {
                   <button className="flex items-center gap-1 hover:text-yellow-400">
                     <MdArrowDropDown />
                   </button>
-                  <button className=" text-white items-center font-sans relative hover:text-white flex   ">
+                  <button className="text-white items-center font-sans relative hover:text-white flex">
                     {t("talabalar")}{" "}
                   </button>
                   {isDropdownOpen5 && (
                     <ul
-                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      className="absolute left-0 top-full shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
                       onMouseEnter={() => setIsDropdownOpen5(true)}
                       onMouseLeave={() => setIsDropdownOpen5(false)}
                     >
-                      {/* Ichki menyu */}
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        TATU missiyasi
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Tuzilma
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Me'yoriy hujjatlar
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Umumiy ma'lumot
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rekvizitlar
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rektor virtual qabulxonasi
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Ochiq ma'lumotlar
-                      </li>
-                    </ul>
-                  )}
-                </li>
-
-                <li
-                  className="relative flex"
-                  // Hoverdan chiqganda menyuni yopish
-                >
-                  <button className="flex items-center gap-1 hover:text-yellow-400">
-                    <MdArrowDropDown />
-                  </button>
-                  <button className=" text-white items-center font-sans relative hover:text-white flex  ">
-                    {t("aloqa")}{" "}
-                  </button>
-                  {isDropdownOpen6 && (
-                    <ul
-                      className="absolute left-0 top-full  shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
-                      onMouseEnter={() => setIsDropdownOpen6(true)}
-                      onMouseLeave={() => setIsDropdownOpen6(false)}
-                    >
-                      {/* Ichki menyu */}
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        TATU missiyasi
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Tuzilma
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Me'yoriy hujjatlar
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Umumiy ma'lumot
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rekvizitlar
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rektor virtual qabulxonasi
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Ochiq ma'lumotlar
+                      {/* Bakalavriat */}
+                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
+                        Bakalavriat
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Yo'riqnoma
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Kontingent
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Dars jadvali
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Stipendiyalar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Iqtidorli talabalar
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Davlat imtihonlari
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Bitiruv malakaviy ish himoyasi
+                          </li>
+                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                            Odob ahloq qoidalari
+                          </li>
+                        </ul>
                       </li>
                     </ul>
                   )}
                 </li>
               </ul>
-<ul>
-  <button onClick={handleNavigate} className="bg-blue-950 py-1 px-1 rounded-md">Sayt xaretasi </button>
-</ul>
+              <div>
+                {/* Sayt xaretasi tugmasi */}
+                <ul>
+                  <button
+                    onClick={openModal}
+                    className="bg-blue-950 text-white py-1 px-4 rounded-md"
+                  >
+                    Sayt xaritasi
+                  </button>
+                </ul>
+
+                {/* Modal */}
+                {isModalOpen && (
+                  <div className="fixed inset-0 bg-black bg-opacity-50 flex mt-[200px]  text-black items-center justify-center z-50">
+                    <div className="bg-white w-[90%] md:w-[50%] p-6 rounded-lg shadow-lg relative">
+                      <h2 className="text-lg font-bold mb-4">Sayt xaretasi</h2>
+                      <ul className="list-disc list-inside">
+                        <li>Asosiy sahifa</li>
+                        <li>Biz haqimizda</li>
+                        <li>Xizmatlar</li>
+                        <li>Kontaktlar</li>
+                      </ul>
+                      <div className="mt-6 flex justify-end">
+                        <button
+                          className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-700 transition"
+                          onClick={closeModal}
+                        >
+                          Yopish
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
               <ul>
                 <button
                   className={`menubtn ${isActive ? "active" : ""}`}

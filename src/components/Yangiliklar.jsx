@@ -17,7 +17,7 @@ const Yangiliklar = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className=" mx-auto container  max-w-[1210px]  px-4 py-8">
       <h1 className="text-center font-lato text-2xl md:text-3xl font-semibold py-5">
         Eng So'ngi Yangiliklar
       </h1>

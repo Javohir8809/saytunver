@@ -21,15 +21,19 @@ const ElonlarDetails = () => {
   if (!newsItem) return <p>Ma'lumotlar yuklanmoqda yoki mavjud emas...</p>;
 
   return (
-    <div className="container mx-auto py-6 mt-10">
+    <div className="container mx-auto  max-w-[1210px] py-6 mt-[120px]">
       <h1 className="text-3xl font-bold">{newsItem.title}</h1>
-      <p className="text-gray-600 text-sm">Chop etilgan sana: {newsItem.date}</p>
-      <img
+     <div className="flex gap-5">
+     <img
         src={newsItem.image}
         alt={newsItem.title}
-        className="my-4 rounded-lg shadow-lg object-cover w-full"
+        className="my-4  shadow-lg object-cover w-[500px]"
       />
-      <p className="text-lg">{newsItem.description}</p>
+      <p className="text-lg mt-2">{newsItem.description}</p>
+      
+     </div>
+     <p className="text-gray-600 text-sm">Chop etilgan sana:{newsItem.date}</p>
+
     </div>
   );
 };

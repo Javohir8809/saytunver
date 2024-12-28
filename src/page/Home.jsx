@@ -10,12 +10,11 @@ const Home = () => {
   return (
     <div className=" mt-[121px]">
       <Swaper />
-      <div className="container max-w-[1210px]  mx-auto ">
+      <div className="container mx-auto ">
         <Foydali/>
         <Yangiliklar />
         <Elonlar />
         <Fakultetlar />
-        {/* <Deriktor /> */}
         <Haqida/>
         <Foaltalabalar/>
       </div>

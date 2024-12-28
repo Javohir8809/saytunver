@@ -6,8 +6,9 @@ import Counter from "../Animation/Counter"; // Counter komponenti
 
 const Haqida = () => {
   return (
-    <div className="bg-[#1B6B50] text-white py-10 rounded-xl">
-      <div className="container mx-auto px-4">
+   <div className="bg-[#1B6B50] w-full">
+     <div className=" text-white py-10 ">
+      <div className="container  max-w-[1210px] mx-auto  px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Fakultetlar */}
           <div className="flex flex-col items-center text-center">
@@ -55,6 +56,7 @@ const Haqida = () => {
         </div>
       </div>
     </div>
+   </div>
   );
 };
 
