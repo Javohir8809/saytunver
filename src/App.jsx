@@ -1,12 +1,15 @@
-import React from 'react';
-import Header from './components/Header'; // Header komponenti
-import RoutesComponent from './routes/RoutesComponent ';
+import React from "react";
+import Header from "./components/Header";
+import RoutesComponent from "./routes/RoutesComponent";
 
 const App = () => {
+
   return (
     <>
       <Header />
-      <RoutesComponent/>
+      <main>
+        <RoutesComponent />
+      </main>
     </>
   );
 };

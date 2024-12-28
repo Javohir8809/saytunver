@@ -1,58 +1,40 @@
-// i18n.js
 import i18n from "i18next";
+import Backend from "i18next-http-backend";
+import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
-const  resources = {
-  uz: {
-    translation: {
-      university: "SAMARQAND DAVLAT UNIVERSITETI KATTAQO'RG'ON FILIALI",
-      mail: "Pochta",
-      filial: "FILIAL",
-      talim: "TA'LIM",
-      info: "YANGILIKLAR",
-      faoliyat: "FAOLIYAT",
-      QABUL2024: "QABUL2024",
-      talabalar: "TALABALARGA",
-      tuzulma: "TUZULMA",
-    },
-  },
-  ru: {
-    translation: {
-      university: "САМАРКАНДСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ КАТТАКУРГАНСКИЙ ФИЛИАЛ",
-      mail: "Почта",
-      filial: "ФИЛИАЛ",
-      talim: "ОБРАЗОВАНИЕ",
-      info: "ИНФОРМАЦИОННАЯ",
-      faoliyat: "ДЕЯТЕЛЬНОСТЬ",
-      QABUL2024: "ПРИЕМ2024",
-      talabalar: "ДЛЯ СТУДЕНТОВ",
-      tuzulma: "СТРУКТУРА",
-    },
-  },
-  en: {
-    translation: {
-      university: "SAMARKAND STATE UNIVERSITY KATTAQO'RG'ON BRANCH",
-      mail: "Mail",
-      filial: "BRANCH",
-      talim: "EDUCATION",
-      info: "INFORMATION ",
-      faoliyat: "ACTIVITY",
-      QABUL2024: "ACCEPTANCE2024",
-      talabalar: "FOR STUDENTS",
-      tuzulma: "STRUCTURE",
-    },
-  },
- 
-};
+async function translateWithAPI(key, lng) {
+  try {
+    const response = await fetch(
+      `https://api.mymemory.translated.net/get?q=${encodeURIComponent(key)}&langpair=${lng}|uz`
+    );
+    const data = await response.json();
+    return data.responseData.translatedText;
+  } catch (error) {
+    console.error("Ошибка API перевода:", error);
+    return key; // Возврат ключа, если перевод не удался
+  }
+}
 
-
-i18n.use(initReactI18next).init({
-  resources,
-  lng: "uz", 
-  fallbackLng: "en", 
-  interpolation: {
-    escapeValue: false, 
-  },
-});
+i18n
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    backend: {
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
+    },
+    fallbackLng: "uz",
+    saveMissing: true,
+    debug: true,
+    interpolation: {
+      escapeValue: false,
+    },
+    missingKeyHandler: async (lng, ns, key) => {
+      const translatedText = await translateWithAPI(key, lng);
+      console.log(`Перевод ключа '${key}': ${translatedText}`);
+      return translatedText || key;
+    },
+  });
 
 export default i18n;

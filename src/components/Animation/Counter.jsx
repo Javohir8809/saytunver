@@ -4,7 +4,7 @@ const Counter = ({ target }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const increment = target / 200; // Animatsiya tezligi
+    const increment = target / 200;
     let current = 0;
 
     const updateCounter = () => {
@@ -20,7 +20,7 @@ const Counter = ({ target }) => {
     updateCounter();
   }, [target]);
 
-  return <h1>{count}</h1>;
+  return <span>{count}</span>;
 };
 
 export default Counter;
