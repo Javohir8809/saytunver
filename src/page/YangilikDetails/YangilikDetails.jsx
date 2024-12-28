@@ -2,36 +2,70 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_REACT_NEWS2_URL; // API URL
+
 const YangilikDetails = () => {
-  const { id } = useParams(); 
-  const [newsItem, setNewsItem] = useState(null);
+  const { id } = useParams(); // URL dan ID olish
+  const [newsItem, setNewsItem] = useState(null); // Yangilik ma'lumotlari
+  const [loading, setLoading] = useState(true); // Yuklanish holati
+  const [error, setError] = useState(null); // Xatolik holati
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/news/${id}`)
+      .get(`${apiUrl}/${id}/`) // API so'rovi
       .then((response) => {
-        console.log("API javobi:", response.data); 
-        setNewsItem(response.data);
+        console.log("API javobi:", response.data); // API javobini konsolga chiqarish
+        setNewsItem(response.data); // Ma'lumotlarni state ga yozish
+        setLoading(false); // Yuklanish jarayonini tugatish
       })
       .catch((error) => {
-        console.error("Yangilikni olishda xatolik:", error);
+        console.error("Yangilikni olishda xatolik:", error); // Xatolikni konsolga chiqarish
+        setError("Yangilikni yuklashda xatolik yuz berdi.");
+        setLoading(false); // Yuklanish jarayonini tugatish
       });
   }, [id]);
 
-  if (!newsItem) return <p>Ma'lumotlar yuklanmoqda yoki mavjud emas...</p>;
+  // Yuklanish jarayoni davom etayotgan bo'lsa
+  if (loading) {
+    return <p>Yuklanmoqda...</p>;
+  }
 
+  // Xatolik yuz bergan bo'lsa
+  if (error) {
+    return <p className="text-red-500">{error}</p>;
+  }
+
+  // Ma'lumotlarni ko'rsatish
   return (
-    <div className="container mx-auto  max-w-[1210px] py-6 mt-[110px]">
-      <h1 className="text-3xl font-bold">{newsItem.title}</h1>
-     <div className="flex gap-5">
-     <img
-        src={newsItem.image}
-      alt=""
-        className="my-4  shadow-lg  object-cover w-[600px]"
-      />
-      <p className="text-lg mt-2">{newsItem.description}</p>
-     </div>
-     <p className="text-gray-600 text-sm ">Chop etilgan sana: {newsItem.date}</p>
+    <div className="container mx-auto max-w-[1210px] py-6 mt-[110px]">
+      {/* Sarlavha */}
+      <h1 className="text-3xl font-bold mb-4">{newsItem.title}</h1>
+
+      {/* Kontent */}
+      <div className="flex flex-col md:flex-row gap-6">
+        {/* Rasm */}
+        <div className="flex-shrink-0">
+          {newsItem.rasmlar && newsItem.rasmlar.length > 0 ? (
+            <img
+              src={newsItem.rasmlar[0].rasm}
+              alt={newsItem.title}
+              className="w-full md:w-[600px] h-auto rounded-lg shadow-md object-cover"
+            />
+          ) : (
+            <p>Rasm mavjud emas</p>
+          )}
+        </div>
+
+        {/* Tavsif */}
+        <div>
+          <p className="text-lg text-gray-700">{newsItem.matnlar[0]?.matn || "Tavsif mavjud emas."}</p>
+        </div>
+      </div>
+
+      {/* Sana */}
+      <p className="text-gray-500 text-sm mt-4">
+        Chop etilgan sana: {newsItem.date || "Mavjud emas"}
+      </p>
     </div>
   );
 };

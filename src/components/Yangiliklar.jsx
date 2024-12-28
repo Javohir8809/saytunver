@@ -4,10 +4,11 @@ const NewsComponent = () => {
   const [newsData, setNewsData] = useState([]); // API-dan kelgan ma'lumotlar
   const [loading, setLoading] = useState(true); // Yuklanish jarayoni
   const [error, setError] = useState(null); // Xatolik holati
+  const apiUrl = import.meta.env.VITE_REACT_NEWS2_URL; // API URL
 
   useEffect(() => {
     // API dan ma'lumot olish
-    fetch("https://javodev.uz/yangiliklar/") // API URL
+    fetch(`${apiUrl}`)
       .then((response) => {
         console.log("Response:", response); // Response ni konsolga chiqarish
         if (!response.ok) {
@@ -25,7 +26,7 @@ const NewsComponent = () => {
         setError(error.message); // Xatoni state ga yozish
         setLoading(false); // Yuklanish holatini tugatish
       });
-  }, []); // Faqat bir marta ishlaydi
+  }, []);
 
   // Yuklanish jarayoni davom etayotganini ko'rsatish
   if (loading) {
@@ -39,31 +40,32 @@ const NewsComponent = () => {
 
   // Ma'lumotlarni ko'rsatish
   return (
-    <div className="container max-w-[1210px] mx-auto">
+    <div className="container max-w-[1210px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {newsData.map((news) => (
-        <div key={news.id} className="news-item mb-6 border-b pb-4">
-          {/* Sarlavha */}
-          <h2 className="font-bold text-2xl mb-2">{news.title}</h2>
-
-          {/* Rasmlar */}
-          <div className="news-images mb-4">
-            {news.rasmlar.map((image) => (
+        <div
+          key={news.id}
+          className="card bg-white shadow-lg rounded-lg overflow-hidden"
+        >
+          {/* Rasm */}
+          <div className="card-image">
+            {news.rasmlar.length > 0 && (
               <img
-                key={image.id}
-                src={image.rasm}
+                src={news.rasmlar[0].rasm}
                 alt={news.title}
-                className="w-64 h-40 object-cover rounded-lg"
+                className="w-full h-40 object-cover"
               />
-            ))}
+            )}
           </div>
 
-       
-          <div className="news-text">
-            {news.matnlar.map((text) => (
-              <p key={text.id} className="text-gray-800">
-                {text.language === "uz" ? text.matn : "Til mavjud emas"}
-              </p>
-            ))}
+          {/* Kontent */}
+          <div className="card-content p-4">
+            <h2 className="text-lg font-bold mb-2">{news.title}</h2>
+            <p className="text-gray-700 text-sm">
+              {news.matnlar
+                .filter((text) => text.language === "uz")
+                .map((text) => text.matn)
+                .join("") || "Til mavjud emas"}
+            </p>
           </div>
         </div>
       ))}
