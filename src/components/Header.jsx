@@ -552,7 +552,7 @@ const Header = () => {
                             Filial psixologi
                           </li>
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            <Y></Y>otoqxona
+                            Yotoqxona
                           </li>
                         </ul>
                       </li>
