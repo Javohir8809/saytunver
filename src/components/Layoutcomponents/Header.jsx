@@ -19,7 +19,6 @@ const Header = () => {
   const [isDropdownOpen4, setIsDropdownOpen4] = useState(false);
   const [isDropdownOpen5, setIsDropdownOpen5] = useState(false);
   const [isDropdownOpen6, setIsDropdownOpen6] = useState(false);
-  const [isDropdownOpen7, setIsDropdownOpen7] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false); // Modalni boshqarish
   const openModal = () => setIsModalOpen(true);

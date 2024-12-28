@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import JaloliddinMahmudov from "../../../public/images/Iqtidorlitalabalar/JaloliddinMahmudov.jpg";
-import NasrulloyevaRayhona from "../../../public/images/Iqtidorlitalabalar/NasrulloyevaRayhona.jpg";
-import YusupovaGulnoza from "../../../public/images/Iqtidorlitalabalar/YusupovaGulnoza.jpg";
+import JaloliddinMahmudov from "../../images/Iqtidorlitalabalar/JaloliddinMahmudov.jpg";
+import NasrulloyevaRayhona from "../../images/Iqtidorlitalabalar/NasrulloyevaRayhona.jpg";
+import YusupovaGulnoza from "../../images/Iqtidorlitalabalar/YusupovaGulnoza.jpg";
 
 const Foaltalabalar = () => {
   return (
