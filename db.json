@@ -89,6 +89,32 @@
         "guruhi":"18-23 guruh"
       }
       
-    ]
+    ],
+    
+      "newslar": [
+        {
+          "id": 1,
+          "title": "Samarqand davlat universitetida yangi o'quv yili boshlandi",
+          "content": "Samarqand davlat universiteti talabalari uchun 2023-2024 o'quv yili tantanali ravishda boshlandi.",
+          "image": "https://example.com/news1.jpg",
+          "date": "2023-09-01"
+        },
+        {
+          "id": 2,
+          "title": "Universitet ilmiy konferensiyasi o'tkazildi",
+          "content": "Ilmiy izlanishlarga bag'ishlangan katta konferensiya o'tkazildi.",
+          "image": "https://example.com/news2.jpg",
+          "date": "2023-10-15"
+        },
+        {
+          "id": 3,
+          "title": "Yangi laboratoriya ochilishi",
+          "content": "Universitetda zamonaviy texnologiyalar bilan jihozlangan yangi laboratoriya ochildi.",
+          "image": "https://example.com/news3.jpg",
+          "date": "2023-11-10"
+        }
+      ]
+    
+    
   }
   

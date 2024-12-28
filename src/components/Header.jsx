@@ -9,8 +9,8 @@ import "../assets/style/font.css";
 import { MdArrowDropDown } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 
-import '../assets/style/font.css'
-import { Link } from "react-router";
+import "../assets/style/font.css";
+import { Link, useNavigate } from "react-router";
 const Header = () => {
   const { t, i18n } = useTranslation(); // i18next dan foydalanish
   const [fontSizeClass, setFontSizeClass] = useState("text-base");
@@ -22,13 +22,14 @@ const Header = () => {
   const [isDropdownOpen6, setIsDropdownOpen6] = useState(false);
   const [isDropdownOpen7, setIsDropdownOpen7] = useState(false);
   const [isActive, setIsActive] = useState(false);
-
-
-
-  const toggleMenu  = () => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/Saytxaretasi"); // Navigatsiya qilingadigan manzil
+  };
+  const toggleMenu = () => {
     setIsActive(!isActive);
   };
-  console.log(!isActive); 
+  console.log(!isActive);
   // Tildan kelib chiqib font o'lchamini boshqarish
   useEffect(() => {
     if (i18n.language === "ru") {
@@ -109,10 +110,10 @@ const Header = () => {
                 </div>
               </ul>
 
-              <ul 
-  id="menu-id" 
-  className={` li_ul flex items-center justify-between max-w-[800px] gap-3`}
->
+              <ul
+                id="menu-id"
+                className={` li_ul flex items-center justify-between max-w-[800px] gap-3`}
+              >
                 {/* Dropdown menu */}
                 <li
                   className="relative flex"
@@ -134,7 +135,7 @@ const Header = () => {
                     >
                       {/* Ichki menyu */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        TATU missiyasi
+                        TATU missi
                       </li>
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
                         Tuzilma
@@ -178,7 +179,7 @@ const Header = () => {
                     >
                       {/* Ichki menyu */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        TATU missiyasi
+                        TATU missiyasii
                       </li>
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
                         Tuzilma
@@ -220,28 +221,22 @@ const Header = () => {
                       onMouseEnter={() => setIsDropdownOpen3(true)}
                       onMouseLeave={() => setIsDropdownOpen3(false)}
                     >
-                      {/* Ichki menyu */}
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        TATU missiyasi
+                      <Link to='/Oliytalimyangiliklari'>
+                        <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                          Oliy talim yangiliklari
+                        </li>
+                      </Link>
+
+                     <Link to="/Omaviytadbirlar">
+                     <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Omaviy Tadbirlar
                       </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Tuzilma
+                     </Link>
+                     <Link to='/Elonlar'>
+                     <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                        Elonlar
                       </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Me'yoriy hujjatlar
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Umumiy ma'lumot
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rekvizitlar
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Rektor virtual qabulxonasi
-                      </li>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        Ochiq ma'lumotlar
-                      </li>
+                     </Link>
                     </ul>
                   )}
                 </li>
@@ -265,10 +260,10 @@ const Header = () => {
                       onMouseLeave={() => setIsDropdownOpen4(false)}
                     >
                       {/* Ichki menyu */}
-                      <Link to={'/contact'}>
-                      <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
-                        TATU missiyasi
-                      </li>
+                      <Link to={"/contact"}>
+                        <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
+                          TATU missiyasi
+                        </li>
                       </Link>
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
                         Tuzilma
@@ -373,29 +368,30 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black">
                         Ochiq ma'lumotlar
                       </li>
-                    
                     </ul>
                   )}
                 </li>
-               
               </ul>
-              
-
-              
-             <ul>
-             <button className={`menubtn ${isActive ? "active" : ""}`} onClick={toggleMenu}>
-        <IoMenu className={`w-10 h-10 ${isActive ? "text-red-500" : ""}`} />
-      </button>
-             </ul>
+<ul>
+  <button onClick={handleNavigate} className="bg-blue-950 py-1 px-1 rounded-md">Sayt xaretasi </button>
+</ul>
+              <ul>
+                <button
+                  className={`menubtn ${isActive ? "active" : ""}`}
+                  onClick={toggleMenu}
+                >
+                  <IoMenu
+                    className={`w-10 h-10 ${isActive ? "text-red-500" : ""}`}
+                  />
+                </button>
+              </ul>
             </nav>
             <ul
-  id="menu-id"
-  className={`li_ul ${
-    isActive ? "block" : "hidden"
-  } lg:flex items-center justify-between max-w-[800px] gap-3`}
->
-  
-</ul>
+              id="menu-id"
+              className={`li_ul ${
+                isActive ? "block" : "hidden"
+              } lg:flex items-center justify-between max-w-[800px] gap-3`}
+            ></ul>
           </header>
         </div>
       </div>

@@ -2,24 +2,55 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const Foaltalabalar = () => {
-  const [talaba, setTalaba] = useState([]);
+  const talabalar = [
+    {
+      image: "https://ttysi.uz/storage/uploads/recall/PEjAwt9l1xs7xWFKnZHOWBRHCXMsanQYOnpmyPTb.jpg",
+      "ism-fameliya": "Niyozov Azizjon",
+      "otasini-ismi": "G'ayrat o'g'li",
+      guruhi: "M1-24 guruh",
+    },
+    {
+      image: "https://ttysi.uz/storage/uploads/recall/cPk14qVPrA3soXX1vO2vtYdkH6ei6RxbRgNvZ0Jx.jpg",
+      "ism-fameliya": "Islomberdieva Sarvinoz",
+      "otasini-ismi": "Shavkat qizi",
+      guruhi: "16-20 guruh",
+    },
+    {
+      image: "https://ttysi.uz/storage/uploads/recall/yvSNabRt14lIPGT6eZaMYKV7c5BLAAywwyVpTF8B.jpg",
+      "ism-fameliya": "Otaxanov Obidxon",
+      "otasini-ismi": "Davlat o'g'li",
+      guruhi: "M1-24 guruh",
+    },
+    {
+      image: "https://ttysi.uz/storage/uploads/recall/59Dh53PK0W3HoSuvIpGdjoYoB9kln4JmeLSJDOoY.jpg",
+      "ism-fameliya": "Tohirova Husnora",
+      "otasini-ismi": "Nurillo qizi",
+      guruhi: "8-22 guruh",
+    },
+    {
+      image: "https://ttysi.uz/storage/uploads/recall/UWQdpd0qrDXbhKAJ729z2zUkm1DEUlTidKOtKHkX.jpg",
+      "ism-fameliya": "Xasanov Zohir",
+      "otasini-ismi": "Toxir o'g'li",
+      guruhi: "18-23 guruh",
+    },
+  ];
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:4000/foaltalabalar")
-      .then((response) => {
-        setTalaba(response.data);
-      })
-      .catch((error) => {
-        console.log("Talabani ma'lumotini olishda xatolik", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:4000/foaltalabalar")
+  //     .then((response) => {
+  //       setTalaba(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Talabani ma'lumotini olishda xatolik", error);
+  //     });
+  // }, []);
 
   return (
     <div>
       <h1 className="mt-5 font-lato text-4xl text-center">Foal Talabalar</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 justify-items-center mt-5">
-        {talaba.map((malumot) => (
+        {talabalar.map((malumot) => (
           <div
             key={malumot.id}
             className="relative w-full max-w-[200px] h-72 overflow-hidden rounded-lg shadow-md "

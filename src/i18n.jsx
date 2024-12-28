@@ -9,7 +9,7 @@ const  resources = {
       mail: "Pochta",
       filial: "FILIAL",
       talim: "TA'LIM",
-      info: "AXBOROT XIZMATI  ",
+      info: "YANGILIKLAR",
       faoliyat: "FAOLIYAT",
       hujjatlar: "HUJJATLAR",
       talabalar: "TALABALARGA",
