@@ -5,16 +5,26 @@ import { initReactI18next } from "react-i18next";
 
 async function translateWithAPI(key, lng) {
   try {
+    if (!lng || lng === "cimode") {
+      return key;
+    }
+
     const response = await fetch(
       `https://api.mymemory.translated.net/get?q=${encodeURIComponent(key)}&langpair=${lng}|uz`
     );
     const data = await response.json();
-    return data.responseData.translatedText;
+
+    if (data.responseData.translatedText) {
+      return data.responseData.translatedText;
+    }
+
+    return key;
   } catch (error) {
     console.error("Ошибка API перевода:", error);
-    return key; // Возврат ключа, если перевод не удался
+    return key;
   }
 }
+
 
 i18n
   .use(Backend)

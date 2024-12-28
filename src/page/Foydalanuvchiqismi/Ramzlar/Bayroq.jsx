@@ -1,7 +1,7 @@
 
 function Bayroq() {
   return (
-    <div className="text-center p-8 bg-gradient-to-br from-blue-50 to-green-50">
+    <div className="p-8 bg-gradient-to-br from-blue-50 to-green-50 max-w-[1210px] mx-auto mt-40">
       <h2 className="text-3xl font-extrabold text-blue-700 mb-6">O'zbekiston Respublikasining Davlat Bayrog'i</h2>
       <img
         src="/public/images/ramzlar/bayroq.png"

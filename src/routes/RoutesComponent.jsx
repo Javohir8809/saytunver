@@ -16,6 +16,7 @@ import Saytxareta from "../page/saytxaretasi/Saytxareta";
 
 // Ramzlar
 import Bayroq from "../page/Foydalanuvchiqismi/Ramzlar/Bayroq";
+import Gerb from "../page/Foydalanuvchiqismi/Ramzlar/Gerb";
 
 const RoutesComponent = () => {
   return (
@@ -35,8 +36,9 @@ const RoutesComponent = () => {
 
         {/* Davlat ramzlari */}
         <Route path="/bayroq" element={<Bayroq />} />
+        <Route path="/gerb" element={<Gerb />} />
       </Routes>
-      <Footer />
+      
     </>
   );
 };

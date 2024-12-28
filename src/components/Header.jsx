@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next"; // i18next ni chaqirish
 import Select from "react-select"; // react-select ni import qilish
-import saytlogo from "../assets/photo_2021-11-03_09-02-49.jpg";
+import logo from "../../public/logo.png";
 import bayroq from "../assets/bayroq.jpg";
 import Girb from "../assets/img/gerb_uzbekistana.png";
 import { FaMusic } from "react-icons/fa";
@@ -54,26 +54,32 @@ const Header = () => {
   ];
 
   return (
-    <div className="fixed  top-0 left-0 w-full bg-beige/90 backdrop-blur-md  border-gray-300 z-50 h-16">
+    <div className="fixed  top-0 left-0 w-full bg-beige/90 backdrop-blur-md  border-gray-900 z-50 h-16">
       <div className=" navbarc  flex items-center justify-between  py-2 px-[20px] max-w-[1210px] mx-auto">
         <div
           className={` herro  text-center items-center flex   gap-2 ${fontSizeClass}`}
         >
+        <Link to="/bayroq">
           <img
             src={bayroq}
             alt="UZ"
             className="h-auto w-10 mr-2 cursor-pointer hover:scale-105 hover:bg-gray-200 p-1 rounded"
           />
+          </Link>
           <span className="hover:text-blue-500 cursor-pointer">|</span>
+          <Link to="/gerb">
           <img
             src={Girb}
             alt="UZ.Gerbi"
             className="h-auto w-10 mr-2 cursor-pointer hover:scale-105 hover:bg-gray-200 p-1 rounded"
           />
+          </Link>
           <span className="hover:text-blue-500 cursor-pointer">|</span>
+          <Link to="/">
           <div>
             <FaMusic className="cursor-pointer hover:text-blue-500 hover:scale-105" />
           </div>
+          </Link>
           <span className="hover:text-blue-500 cursor-pointer">|</span>
           <p className="text-[#337AB7] hover:text-blue-500 cursor-pointer">
             {t("mail")}
@@ -101,9 +107,10 @@ const Header = () => {
         <div className="container max-w-[1210px] px-[20px] mx-auto">
           <header className={`flex items-center  ${fontSizeClass}`}>
             <nav className="navbar flex items-center py-2 w-full justify-between">
+              <Link to="/">
               <ul className="ul_sayt flex items-center gap-2">
                 <img
-                  src={saytlogo}
+                  src={logo}
                   alt="Logo"
                   className="h-15 w-[50px] h-auto"
                 />
@@ -111,6 +118,7 @@ const Header = () => {
                   <span className="text-[14px]">{t("university")}</span>
                 </div>
               </ul>
+              </Link>
 
               <ul
                 id="menu-id"
@@ -290,7 +298,7 @@ const Header = () => {
                     <MdArrowDropDown />
                   </button>
                   <button className="text-white items-center font-sans relative hover:text-white flex">
-                    {t("tuzulma")}
+                    {t("tuzilma")}
                   </button>
                   {isDropdownOpen6 && (
                     <ul
@@ -552,7 +560,7 @@ const Header = () => {
                             Filial psixologi
                           </li>
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            <Y></Y>otoqxona
+                            Yotoqxona
                           </li>
                         </ul>
                       </li>
@@ -630,7 +638,7 @@ const Header = () => {
                   </button>
 
                   <button className="text-white items-center font-sans relative hover:text-white flex">
-                    {t("QABUL2024")}
+                    {t("qabul2024")}
                   </button>
                   {isDropdownOpen4 && (
                     <ul
@@ -742,7 +750,7 @@ const Header = () => {
                 </li>
               </ul>
               <div>
-                {/* Sayt xaretasi tugmasi */}
+                {/* Sayt xaretasi tugmasi
                 <ul>
                   <button
                     onClick={openModal}
@@ -750,7 +758,7 @@ const Header = () => {
                   >
                     Sayt xaritasi
                   </button>
-                </ul>
+                </ul> */}
 
                 {/* Modal */}
                 {isModalOpen && (
