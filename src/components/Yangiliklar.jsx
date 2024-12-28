@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // React Router Link import qilish
 
 const NewsComponent = () => {
   const [newsData, setNewsData] = useState([]); // API-dan kelgan ma'lumotlar
@@ -44,10 +45,10 @@ const NewsComponent = () => {
       {newsData.map((news) => (
         <div
           key={news.id}
-          className="card bg-white shadow-lg rounded-lg overflow-hidden"
+          className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
         >
           {/* Rasm */}
-          <div className="card-image">
+          <div className="relative">
             {news.rasmlar.length > 0 && (
               <img
                 src={news.rasmlar[0].rasm}
@@ -58,14 +59,26 @@ const NewsComponent = () => {
           </div>
 
           {/* Kontent */}
-          <div className="card-content p-4">
-            <h2 className="text-lg font-bold mb-2">{news.title}</h2>
-            <p className="text-gray-700 text-sm">
+          <div className="p-4">
+            <h2 className="text-lg font-bold text-gray-800 mb-2">
+              {news.title}
+            </h2>
+            <p className="text-sm text-gray-600 mb-3 line-clamp-2">
               {news.matnlar
                 .filter((text) => text.language === "uz")
                 .map((text) => text.matn)
                 .join("") || "Til mavjud emas"}
             </p>
+            <p className="text-xs text-gray-400 mb-3">
+              {new Date().toLocaleDateString("uz-UZ")}
+            </p>
+            {/* Details tugmasi */}
+            <Link
+               // Har bir yangilik uchun yo'naltiruvchi link
+              className="inline-block bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600 transition"
+            >
+              Batafsil
+            </Link>
           </div>
         </div>
       ))}

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const apiUrl = import.meta.env.VITE_REACT_NEWS2_URL; // API URL
 
 const YangilikDetails = () => {
-  const { id } = useParams(); // URL dan ID olish
+  const { id } = useParams(); // URL-dan ID olish
   const [newsItem, setNewsItem] = useState(null); // Yangilik ma'lumotlari
   const [loading, setLoading] = useState(true); // Yuklanish holati
   const [error, setError] = useState(null); // Xatolik holati
@@ -25,23 +25,13 @@ const YangilikDetails = () => {
       });
   }, [id]);
 
-  // Yuklanish jarayoni davom etayotgan bo'lsa
-  if (loading) {
-    return <p>Yuklanmoqda...</p>;
-  }
+  if (loading) return <p>Yuklanmoqda...</p>; // Yuklanish holati
+  if (error) return <p className="text-red-500">{error}</p>; // Xatolik holati
 
-  // Xatolik yuz bergan bo'lsa
-  if (error) {
-    return <p className="text-red-500">{error}</p>;
-  }
-
-  // Ma'lumotlarni ko'rsatish
+  // Yangilikni ko'rsatish
   return (
-    <div className="container mx-auto max-w-[1210px] py-6 mt-[110px]">
-      {/* Sarlavha */}
-      <h1 className="text-3xl font-bold mb-4">{newsItem.title}</h1>
-
-      {/* Kontent */}
+    <div className="container mx-auto max-w-[1210px] py-6 mt-[210px]">
+      <h1 className="text-3xl font-bold mt-10">{newsItem.title}</h1>
       <div className="flex flex-col md:flex-row gap-6">
         {/* Rasm */}
         <div className="flex-shrink-0">
@@ -55,14 +45,24 @@ const YangilikDetails = () => {
             <p>Rasm mavjud emas</p>
           )}
         </div>
-
         {/* Tavsif */}
         <div>
-          <p className="text-lg text-gray-700">{newsItem.matnlar[0]?.matn || "Tavsif mavjud emas."}</p>
+          <p className="text-lg text-gray-700">
+            {newsItem.matnlar[0]?.matn || "Tavsif mavjud emas."}
+          </p>
+         
         </div>
       </div>
-
-      {/* Sana */}
+      <p
+              className="text-gray-700 text-sm"
+              dangerouslySetInnerHTML={{
+                __html:
+                  news.matnlar
+                    .filter((text) => text.language === "uz")
+                    .map((text) => text.matn)
+                    .join("") || "Content not available in this language.",
+              }}
+            ></p>
       <p className="text-gray-500 text-sm mt-4">
         Chop etilgan sana: {newsItem.date || "Mavjud emas"}
       </p>
