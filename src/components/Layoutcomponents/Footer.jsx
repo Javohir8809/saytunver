@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
-import rasimimg from "./Fakulimg/2022_LOGO_NEW_2015_ver_17 copy.svg";
-import teligram from "./Fakulimg/telegram.svg";
-import istagram from "./Fakulimg/icons8-instagram (1).svg";
-import facebook from "./Fakulimg/icons8-facebook.svg";
-import youtube from "./Fakulimg/icons8-youtube.svg";
+import rasimimg from "../Fakulimg/2022_LOGO_NEW_2015_ver_17 copy.svg";
+import teligram from "../Fakulimg/telegram.svg";
+import istagram from "../Fakulimg/icons8-instagram (1).svg";
+import facebook from "../Fakulimg/icons8-facebook.svg";
+import youtube from "../Fakulimg/icons8-youtube.svg";
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);

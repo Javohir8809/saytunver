@@ -4,6 +4,7 @@ import App from './App';
 import './index.css';
 import './i18n';
 import { BrowserRouter } from 'react-router-dom';
+import "./assets/style/font.css";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      return <h1>Nimadir xato bo'ldi...</h1>;
+      return <h1>Nimadir xato bo‘ldi...</h1>;
     }
     return this.props.children;
   }

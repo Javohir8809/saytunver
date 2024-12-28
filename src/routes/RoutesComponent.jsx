@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Komponentlar
-import Footer from "../components/Footer"; 
+import Footer from "../components/Layoutcomponents/Footer"; 
 import Contact from "../components/Contact";
 
 // Sahifalar
@@ -38,7 +38,6 @@ const RoutesComponent = () => {
         <Route path="/bayroq" element={<Bayroq />} />
         <Route path="/gerb" element={<Gerb />} />
       </Routes>
-      
     </>
   );
 };
