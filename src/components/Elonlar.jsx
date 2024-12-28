@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-
+const apiUrl = import.meta.env.VITE_REACT_URL;
 const Elonlar = () => {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/news2")
+      .get(`${apiUrl}`)
       .then((response) => {
         setNews(response.data);
       })

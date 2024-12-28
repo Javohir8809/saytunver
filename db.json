@@ -1,35 +1,5 @@
 {
-    "news": [
-      {
-        "id": 1,
-        "title": "Breaking News: New Product Launched",
-        "description": "We have just launched a new product in our store. Check it out now!",
-        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
-        "date": "2024-12-25"
-      },
-      {
-        "id": 2,
-        "title": "Holiday Sale Starts Now",
-        "description": "Don't miss out on our amazing holiday sale. Discounts up to 50% off!",
-        "image": "https://images.pexels.com/photos/1108092/pexels-photo-1108092.jpeg",
-        "date": "2024-12-24"
-      },
-      {
-        "id": 3,
-        "title": "New Year Party Announcement",
-        "description": "Join us for a spectacular New Year party with music, drinks, and entertainment!",
-        "image": "https://storage.kun.uz/source/thumbnails/_medium/10/6O6huIMwR-3kwgseXc5xlzBftsN-9W7a_medium.jpg",
-        "date": "2024-12-31"
-      },
-      {
-        "id": 4,
-        "title": "Store Reopening After Renovation",
-        "description": "We're excited to announce the reopening of our store after renovations. Visit us today!",
-        "image": "https://images.pexels.com/photos/1591441/pexels-photo-1591441.jpeg",
-        "date": "2024-12-20"
-      }
-     
-    ],
+    
     "news2":[
       {
         "id": 5,

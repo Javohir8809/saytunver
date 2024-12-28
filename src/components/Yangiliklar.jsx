@@ -1,60 +1,74 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
-const Yangiliklar = () => {
-  const [data, setData] = useState([]);
+const NewsComponent = () => {
+  const [newsData, setNewsData] = useState([]); // API-dan kelgan ma'lumotlar
+  const [loading, setLoading] = useState(true); // Yuklanish jarayoni
+  const [error, setError] = useState(null); // Xatolik holati
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:4000/news`)
+    // API dan ma'lumot olish
+    fetch("https://javodev.uz/yangiliklar/") // API URL
       .then((response) => {
-        setData(response.data);
+        console.log("Response:", response); // Response ni konsolga chiqarish
+        if (!response.ok) {
+          throw new Error("API dan ma'lumotlarni olishda xatolik yuz berdi");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Data:", data); // JSON ma'lumotni konsolga chiqarish
+        setNewsData(data); // Ma'lumotlarni state ga yozish
+        setLoading(false); // Yuklanish holatini tugatish
       })
       .catch((error) => {
-        console.error("Yangiliklarni olishda xatolik:", error);
+        console.error("Xatolik:", error.message); // Xatolikni konsolga chiqarish
+        setError(error.message); // Xatoni state ga yozish
+        setLoading(false); // Yuklanish holatini tugatish
       });
-  }, []);
+  }, []); // Faqat bir marta ishlaydi
 
+  // Yuklanish jarayoni davom etayotganini ko'rsatish
+  if (loading) {
+    return <div>Yuklanmoqda...</div>;
+  }
+
+  // Xatolik yuz bergan holatda xabar chiqarish
+  if (error) {
+    return <div>Xatolik: {error}</div>;
+  }
+
+  // Ma'lumotlarni ko'rsatish
   return (
-    <div className=" mx-auto container  max-w-[1210px]  px-4 py-8">
-      <h1 className="text-center font-lato text-2xl md:text-3xl font-semibold py-5">
-        Eng So'ngi Yangiliklar
-      </h1>
+    <div className="container max-w-[1210px] mx-auto">
+      {newsData.map((news) => (
+        <div key={news.id} className="news-item mb-6 border-b pb-4">
+          {/* Sarlavha */}
+          <h2 className="font-bold text-2xl mb-2">{news.title}</h2>
 
-      {/* Grid tuzilmasi */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {data.map((newsItem) => (
-          <Link
-            to={`/news/${newsItem.id}`}
-            key={newsItem.id}
-            className="flex flex-col bg-white text-black rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
-          >
-            {/* Tasvir */}
-            <div className="relative w-full h-56 sm:h-48 md:h-40 lg:h-56">
+          {/* Rasmlar */}
+          <div className="news-images mb-4">
+            {news.rasmlar.map((image) => (
               <img
-                src={newsItem.image}
-                alt={newsItem.title}
-                className="w-full h-full object-cover"
+                key={image.id}
+                src={image.rasm}
+                alt={news.title}
+                className="w-64 h-40 object-cover rounded-lg"
               />
-            </div>
-            {/* Yangilik matni */}
-            <div className="px-4 py-3 flex flex-col justify-between">
-              <h2 className="text-base sm:text-lg md:text-xl font-medium text-black mb-2">
-                {newsItem.title}
-              </h2>
-              <p className="text-sm text-gray-600 line-clamp-2">
-                {newsItem.description}
+            ))}
+          </div>
+
+       
+          <div className="news-text">
+            {news.matnlar.map((text) => (
+              <p key={text.id} className="text-gray-800">
+                {text.language === "uz" ? text.matn : "Til mavjud emas"}
               </p>
-              <p className="text-xs text-gray-500 mt-3">
-                <strong>Published on:</strong> {newsItem.date}
-              </p>
-            </div>
-          </Link>
-        ))}
-      </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default Yangiliklar;
+export default NewsComponent;
