@@ -57,7 +57,7 @@ const Footer = () => {
               </h3>
             </div>
             <div className="flex space-x-4 mb-4">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/samdukf_mx" target="_blank" rel="noopener noreferrer">
                 <img
                   src={teligram}
                   alt="Telegram"

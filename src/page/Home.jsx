@@ -13,7 +13,7 @@ const Home = () => {
       <div className="container mx-auto ">
         <Foydali/>
         <Yangiliklar />
-        <Elonlar />
+        {/* <Elonlar /> */}
         {/* <Fakultetlar /> */}
         <Haqida/>
         <Foaltalabalar/>

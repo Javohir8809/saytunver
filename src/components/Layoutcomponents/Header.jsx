@@ -10,6 +10,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import { IoMenu } from "react-icons/io5";
 
 import { Link, useNavigate } from "react-router";
+import ButtonWithModal from "../ButtonWithModal ";
 const Header = () => {
   const { t, i18n } = useTranslation(); // i18next dan foydalanish
   const [fontSizeClass, setFontSizeClass] = useState("text-base");
@@ -52,7 +53,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="fixed  top-0 left-0 w-full bg-beige/90 backdrop-blur-md  border-gray-900 z-50 h-16">
+    <div className="fixed  top-0 left-0 w-full bg-[#EDEDED]  border-gray-900 z-50 h-16">
       <div className=" navbarc  flex items-center justify-between  py-2 px-[20px] max-w-[1210px] mx-auto">
         <div
           className={` herro  text-center items-center flex   gap-2 ${fontSizeClass}`}
@@ -368,67 +369,54 @@ const Header = () => {
 
                       {/* Bo‘limlar */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
-                        Bo‘limlar
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            O‘quv-uslubiy boshqarma
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
-                          Ta‘lim sifatini nazorat qilish bo‘limi
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
-                          Jismoniy va yuridik shaxslarning murojatlari bilan
-                          ishlash, nazorat va monitoring sektori
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
-                          Yoshlar bilan ishlash ma‘naviyat va ma‘rifat bo‘limi
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
-                          Ilmiy tadqiqotlar, innovatsiyalar sektori
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
-                          Talabalarni turar joy bilan ta‘minlash ishlarini
-                          muvofiqlashtiruvchi bo‘lim
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
-                          Psixolog
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
-                          Iqtidorli talabalarning ilmiy-tadqiqot faolyatini
-                          tashkil etish sektori
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
-                          Buxgalteriya
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer"></li>
-                          Bosh auditor
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Xodimlar bo‘limi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Xalqaro hamkorlik bo‘limi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            1-bo‘lim
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Marketing va talabalar amaliyoti bo‘lim
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Yuristkonsult
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Matbuot kotibi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Reja-moliya bo‘limi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Devonxona va arxiv bo‘limi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Sirtqi bo‘lim
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Devonxona va arxiv bo‘limi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                          Korrupsiyaga qarshi kurashish "Komplaens-nazorat" tizmini boshqarish bo‘limi
-                          </li>
-                        </ul>
-                      </li>
+  Bo‘limlar
+  {/* Ichki menyu */}
+  <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60 border">
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+      O‘quv-uslubiy boshqarma
+    </li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+      Ta‘lim sifatini nazorat qilish bo‘limi
+    </li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+      Jismoniy va yuridik shaxslarning murojatlari bilan ishlash, nazorat va monitoring sektori
+    </li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+      Yoshlar bilan ishlash ma‘naviyat va ma‘rifat bo‘limi
+    </li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+      Ilmiy tadqiqotlar, innovatsiyalar sektori
+    </li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+      Talabalarni turar joy bilan ta‘minlash ishlarini muvofiqlashtiruvchi bo‘lim
+    </li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">Psixolog</li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+      Iqtidorli talabalarning ilmiy-tadqiqot faolyatini tashkil etish sektori
+    </li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">Buxgalteriya</li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">Bosh auditor</li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">Xodimlar bo‘limi</li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+      Xalqaro hamkorlik bo‘limi
+    </li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">1-bo‘lim</li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+      Marketing va talabalar amaliyoti bo‘lim
+    </li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">Yuristkonsult</li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">Matbuot kotibi</li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">Reja-moliya bo‘limi</li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+      Devonxona va arxiv bo‘limi
+    </li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">Sirtqi bo‘lim</li>
+    <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+      Korrupsiyaga qarshi kurashish "Komplaens-nazorat" tizmini boshqarish bo‘limi
+    </li>
+  </ul>
+</li>
+
 
                       {/* O‘quv jarayoni */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
@@ -641,14 +629,14 @@ const Header = () => {
                   </button>
                   {isDropdownOpen4 && (
                     <ul
-                      className="absolute left-0 top-full shadow-lg w-48 z-[1000] bg-[#E0D3F6]"
+                      className="absolute left-0 top-full shadow-lg w-48 z-[1000] bg-[#E0D3F6] "
                       onMouseEnter={() => setIsDropdownOpen4(true)}
                       onMouseLeave={() => setIsDropdownOpen4(false)}
                     >
                       {/* Bakalavriat */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Bakalavriat
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Eslatma
                           </li>
@@ -748,6 +736,9 @@ const Header = () => {
                   )}
                 </li>
               </ul>
+              <div>
+      <ButtonWithModal/>
+              </div>
               <div>
                 {/* Sayt xaretasi tugmasi
                 <ul>

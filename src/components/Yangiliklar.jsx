@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // React Router Link import qilish
+import { Link } from "react-router-dom";
 
 const NewsComponent = () => {
   const [newsData, setNewsData] = useState([]); // API-dan kelgan ma'lumotlar
@@ -11,20 +11,20 @@ const NewsComponent = () => {
     // API dan ma'lumot olish
     fetch(`${apiUrl}`)
       .then((response) => {
-        console.log("Response:", response); // Response ni konsolga chiqarish
+        console.log("Response:", response);
         if (!response.ok) {
           throw new Error("API dan ma'lumotlarni olishda xatolik yuz berdi");
         }
         return response.json();
       })
       .then((data) => {
-        console.log("Data:", data); // JSON ma'lumotni konsolga chiqarish
+        console.log("Data:", data);
         setNewsData(data); // Ma'lumotlarni state ga yozish
         setLoading(false); // Yuklanish holatini tugatish
       })
       .catch((error) => {
-        console.error("Xatolik:", error.message); // Xatolikni konsolga chiqarish
-        setError(error.message); // Xatoni state ga yozish
+        console.error("Xatolik:", error.message);
+        setError(error.message);
         setLoading(false); // Yuklanish holatini tugatish
       });
   }, []);
@@ -41,11 +41,11 @@ const NewsComponent = () => {
 
   // Ma'lumotlarni ko'rsatish
   return (
-    <div className="container max-w-[1210px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="container max-w-[1210px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 mb-10">
       {newsData.map((news) => (
         <div
           key={news.id}
-          className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
+          className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 w-full"
         >
           {/* Rasm */}
           <div className="relative">
@@ -53,7 +53,7 @@ const NewsComponent = () => {
               <img
                 src={news.rasmlar[0].rasm}
                 alt={news.title}
-                className="w-full h-40 object-cover"
+                className="w-full h-40 sm:h-48 md:h-56 lg:h-60 object-cover"
               />
             )}
           </div>
@@ -74,7 +74,7 @@ const NewsComponent = () => {
             </p>
             {/* Details tugmasi */}
             <Link
-               // Har bir yangilik uchun yo'naltiruvchi link
+              to={`/news/${news.id}`}
               className="inline-block bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600 transition"
             >
               Batafsil
