@@ -54,7 +54,7 @@ const Header = () => {
 
   return (
     <div className="fixed  top-0 left-0 w-full bg-[#EDEDED]  border-gray-900 z-50 h-16">
-      <div className=" navbarc  flex items-center justify-between  py-2 px-[20px] max-w-[1210px] mx-auto">
+      <div className=" navbarc  flex items-center justify-between  py-2 px-5 max-w-[1210px] mx-auto">
         <div
           className={` herro  text-center items-center flex   gap-2 ${fontSizeClass}`}
         >
@@ -89,7 +89,7 @@ const Header = () => {
           <span className="hover:text-blue-500 cursor-pointer">|</span>
         </div>
 
-        <div className="langui  ml-4 w-38 flex items-center">
+        <div className="langui  ml-4 w-38 flex items-center bg-[#EDEDED]">
           <Select
             options={languageOptions}
             defaultValue={languageOptions.find(
@@ -146,7 +146,7 @@ const Header = () => {
                     {/* Filial haqida */}
                     <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                       Filial haqida
-                      <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                      <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                         <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                           Filial ustavi
                         </li>
@@ -168,7 +168,7 @@ const Header = () => {
                     {/* Hujjatlar */}
                     <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                       Hujjatlar
-                      <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                      <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                         <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                           Qonunlar
                         </li>
@@ -212,7 +212,7 @@ const Header = () => {
                       {/* Yangiliklar */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         <Link to="/Oliytalimyangiliklari">Yangiliklar</Link>
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Yig‘ilishlar
                           </li>
@@ -238,7 +238,7 @@ const Header = () => {
                       {/* E‘lonlar */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         <Link to="/Omaviytadbirlar">E‘lonlar</Link>
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Yig‘ilishlar
                           </li>
@@ -261,7 +261,7 @@ const Header = () => {
                       {/* Fotogalerya */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         <Link to="/Elonlar">Fotogalerya</Link>
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Universitet fotogaleryasi
                           </li>
@@ -274,7 +274,7 @@ const Header = () => {
                       {/* Videogalerya */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Videogalerya
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Universitet videolar
                           </li>
@@ -308,7 +308,7 @@ const Header = () => {
                       {/* Rahbariyat */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Rahbariyat
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Filial direktori
                           </li>
@@ -321,7 +321,7 @@ const Header = () => {
                       {/* Fakultetlar */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Fakultetlar
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Pedagogika va tillarni o‘qitish
                           </li>
@@ -334,7 +334,7 @@ const Header = () => {
                       {/* Kafedralar */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Kafedralar
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Maktabgacha va boshlang‘ich ta‘lim, sport kafedrasi
                           </li>
@@ -421,7 +421,7 @@ const Header = () => {
                       {/* O‘quv jarayoni */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         O‘quv jarayoni
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Dars jadvali
                           </li>
@@ -476,7 +476,7 @@ const Header = () => {
                       {/* Ilmiy faoliyat */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Ilmiy faoliyat
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Ilmiy to‘plam va ommabop maqolalar
                           </li>
@@ -536,7 +536,7 @@ const Header = () => {
                       {/* Ma‘naviy-ma‘rifiy faoliyat */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Ma‘naviy-ma‘rifiy faoliyat
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Talabalar hayoti
                           </li>
@@ -555,7 +555,7 @@ const Header = () => {
                       {/* Moliyaviy faoliyati */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Moliyaviy faoliyat
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Shartnomalar namunasi
                           </li>
@@ -590,7 +590,7 @@ const Header = () => {
                       {/* Ta‘lim sifati */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Ta‘lim sifati
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Ta‘lim dasturi katalogi
                           </li>
@@ -705,7 +705,7 @@ const Header = () => {
                       {/* Bakalavriat */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Bakalavriat
-                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
+                        <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Yo‘riqnoma
                           </li>

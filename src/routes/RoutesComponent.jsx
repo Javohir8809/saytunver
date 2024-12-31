@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Komponentlar
-import Footer from "../components/Layoutcomponents/Footer"; 
+import Footer from "../components/Layoutcomponents/Footer";
 import Contact from "../components/Contact";
 
 // Sahifalar
@@ -29,7 +29,10 @@ const RoutesComponent = () => {
         <Route path="/news2/:id" element={<ElonlarDetails />} />
 
         {/* Qo'shimcha sahifalar */}
-        <Route path="/oliy-talim-yangiliklari" element={<Oliytalimyangiliklari />} />
+        <Route
+          path="/oliy-talim-yangiliklari"
+          element={<Oliytalimyangiliklari />}
+        />
         <Route path="/omaviy-tadbirlar" element={<Omaviytadbirlar />} />
         <Route path="/elonlar" element={<Elonlar />} />
         <Route path="/sayt-xaritasi" element={<Saytxareta />} />
@@ -37,6 +40,9 @@ const RoutesComponent = () => {
         {/* Davlat ramzlari */}
         <Route path="/bayroq" element={<Bayroq />} />
         <Route path="/gerb" element={<Gerb />} />
+
+        {/* Navdagi sahifalar */}
+        
       </Routes>
     </>
   );
