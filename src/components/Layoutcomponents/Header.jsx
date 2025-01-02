@@ -979,9 +979,9 @@ const Header = () => {
                   )}
                 </li>
               </ul>
-              {/* <div>
+              <div>
                 <ButtonWithModal />
-              </div> */}
+              </div>
               <div>
                 {/* Sayt xaretasi tugmasi
                 <ul>

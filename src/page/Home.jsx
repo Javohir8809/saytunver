@@ -8,7 +8,7 @@ import Haqida from "../components/unverstet/Haqida";
 
 const Home = () => {
   return (
-    <div className=" mt-[121px]">
+    <div className="">
       <Swaper />
       <div className="container mx-auto ">
         <Foydali/>

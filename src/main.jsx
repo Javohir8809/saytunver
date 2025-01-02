@@ -1,10 +1,10 @@
-import React from 'react'; // Add this import
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './index.css';
-import './i18n';
-import { BrowserRouter } from 'react-router-dom';
-import "./assets/style/font.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { RejimlarProvider } from "./context/Rejimlar";
+import { BrowserRouter } from "react-router-dom";
+import "./index.css";
+import "./i18n";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -28,15 +28,12 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-export default ErrorBoundary;
-
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ErrorBoundary>
+      <RejimlarProvider>
         <App />
-      </ErrorBoundary>
+      </RejimlarProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
