@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.accessible {
+    font-size: 1.25rem; /* Matn kattaroq */
+    background-color: #f8f9fa; /* Qulay fon */
+  }
+
+.daltonic {
+    filter: grayscale(100%); /* Rangi o'zgartiriladi */
+    background-color: #ffe4b5; /* Kontrast fon */
+  }

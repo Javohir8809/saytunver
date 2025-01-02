@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Komponentlar
-import Footer from "../components/Layoutcomponents/Footer";
+import Footer from "../components/Foydalanuvchiqismiuchun/Layoutcomponents/Footer";
 import Contact from "../components/Contact";
 
 // Sahifalar
