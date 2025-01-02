@@ -11,6 +11,8 @@ import { IoMenu } from "react-icons/io5";
 
 import { Link, useNavigate } from "react-router";
 import ButtonWithModal from "../ButtonWithModal ";
+import { LiaJenkins } from "react-icons/lia";
+import TestBanner from "../TestBanner";
 const Header = () => {
   const { t, i18n } = useTranslation(); // i18next dan foydalanish
   const [fontSizeClass, setFontSizeClass] = useState("text-base");
@@ -53,7 +55,8 @@ const Header = () => {
   ];
 
   return (
-    <div className="fixed  top-0 left-0 w-full bg-[#EDEDED]  border-gray-900 z-50 h-16">
+    <div className="fixed h-[100px]  top-0 left-0 w-full bg-[#EDEDED]  border-gray-900 z-50 ">
+        <TestBanner/>
       <div className=" navbarc  flex items-center justify-between  py-2 px-5 max-w-[1210px] mx-auto">
         <div
           className={` herro  text-center items-center flex   gap-2 ${fontSizeClass}`}
@@ -143,21 +146,21 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Filial haqida
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                         <Link to={'/filialustovi'}>
-                         <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Filial ustavi
-                          </li>
-                         </Link>
-                          <Link to={'/filialnizomi'}>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Filial nizomi
-                          </li> 
+                          <Link to={"/filialustovi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Filial ustavi
+                            </li>
                           </Link>
-                         <Link to={'/filialtuzulmasi'}>
-                         <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Filial tuzulmasi
-                          </li>
-                         </Link>
+                          <Link to={"/filialnizomi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Filial nizomi
+                            </li>
+                          </Link>
+                          <Link to={"/filialtuzulmasi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Filial tuzulmasi
+                            </li>
+                          </Link>
                           <Link to={"/rekvizitlar"}>
                             <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                               Rekvizitlar
@@ -175,32 +178,31 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Hujjatlar
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                        <Link to={'/qonunlar'}>
-                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Qonunlar
-                          </li>
-                        </Link>
-                          <Link to={'/farmonlar'}>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Farmonlar
-                          </li>
+                          <Link to={"/qonunlar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Qonunlar
+                            </li>
                           </Link>
-                         <Link to={'/qarorlar'}>
-                         <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Qarorlar
-                          </li>
-
-                         </Link>
-                          <Link to={'/nizomlarvaqoidalar'}>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Nizomlar va qoidalar
-                          </li>
+                          <Link to={"/farmonlar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Farmonlar
+                            </li>
                           </Link>
-                        <Link to={'/hisobotlar'}>
-                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Hisobotlar
-                          </li>
-                        </Link>
+                          <Link to={"/qarorlar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Qarorlar
+                            </li>
+                          </Link>
+                          <Link to={"/nizomlarvaqoidalar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Nizomlar va qoidalar
+                            </li>
+                          </Link>
+                          <Link to={"/hisobotlar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Hisobotlar
+                            </li>
+                          </Link>
                         </ul>
                       </li>
                     </ul>
@@ -227,60 +229,91 @@ const Header = () => {
                     >
                       {/* Yangiliklar */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
-                        <Link to="/Oliytalimyangiliklari">Yangiliklar</Link>
+                        <Link>Yangiliklar</Link>
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Yig‘ilishlar
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Uchrashuvlar
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Seminarlar
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Davra suhbatlari
-                          </li>
+                          <Link to={"/yigilishlar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Yig‘ilishlar
+                            </li>
+                          </Link>
+                          <Link to={"/uchrashuvlar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Uchrashuvlar
+                            </li>
+                          </Link>
+                          <Link to={"/seminarlar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Seminarlar
+                            </li>
+                          </Link>
+                          <Link to={"/davrasuhbatlari"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Davra suhbatlari
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Tashriflar
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Brifinglar
-                          </li>
+                          <Link to={"/tashriflar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Tashriflar
+                            </li>
+                          </Link>
+                          <Link to={"/Brifinglar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Brifinglar
+                            </li>
+                          </Link>
                         </ul>
                       </li>
 
                       {/* E‘lonlar */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
-                        <Link to="/Omaviytadbirlar">E‘lonlar</Link>
+                        <Link>E‘lonlar</Link>
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Yig‘ilishlar
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Uchrashuvlar
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Davra suhbatlari
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Tashriflar
-                          </li>
+                          <Link to={"/yigilishlarelon"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Yig‘ilishlar
+                            </li>
+                          </Link>
+                          <Link to={"/uchrashuvlarelon"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Uchrashuvlar
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Brifinglar
-                          </li>
+                          <Link to={"/seminarlarelon"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Seminarlar
+                            </li>
+                          </Link>
+                          <Link to={"/davrasuhbatlarielon"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Davra suhbatlari
+                            </li>
+                          </Link>
+                          <Link to={"/tashriflarelon"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Tashriflar
+                            </li>
+                          </Link>
+
+                          <Link to={"/Brifinglarelon"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Brifinglar
+                            </li>
+                          </Link>
                         </ul>
                       </li>
 
                       {/* Fotogalerya */}
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
-                        <Link to="/Elonlar">Fotogalerya</Link>
+                        Fotogalerya
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Universitet fotogaleryasi
-                          </li>
+                          <Link to={"/fotagalerya"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Universitet fotogaleryasi
+                            </li>
+                          </Link>
+
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Tadbir fotogaleryasi
                           </li>
@@ -325,12 +358,16 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Rahbariyat
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Filial direktori
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Direktor o‘rinbosarlari
-                          </li>
+                          <Link to={"/filiald"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Filial direktori
+                            </li>
+                          </Link>
+                          <Link to={"/urinbosar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Direktor o‘rinbosarlari
+                            </li>
+                          </Link>
                         </ul>
                       </li>
 
@@ -338,12 +375,16 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Fakultetlar
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Pedagogika va tillarni o‘qitish
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Aniq va tabiiy fanlar
-                          </li>
+                          <Link to={"/pedagogika"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Pedagogika va tillarni o‘qitish
+                            </li>
+                          </Link>
+                          <Link to={"/aniqvatabiy"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Aniq va tabiiy fanlar
+                            </li>
+                          </Link>
                         </ul>
                       </li>
 
@@ -351,22 +392,33 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Kafedralar
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Maktabgacha va boshlang‘ich ta‘lim, sport kafedrasi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            O‘zbek tili gumanitar fanlar kafedrasi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Xorijiy tillar kafedrasi
-                          </li>
+                          <Link to={"/maktabgacha"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Maktabgacha va boshlang‘ich ta‘lim, sport
+                              kafedrasi
+                            </li>
+                          </Link>
+                          <Link to={"/gumanitar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              O‘zbek tili gumanitar fanlar kafedrasi
+                            </li>
+                          </Link>
+                          <Link to={"/chettil"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Xorijiy tillar kafedrasi
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Raqamli texnologiyalar va iqtisodiyot kafedrasi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Aniq va tabiy fanlar kafedrasi
-                          </li>
+                          <Link to={"/raqamlis"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Raqamli texnologiyalar va iqtisodiyot kafedrasi
+                            </li>
+                          </Link>
+                          <Link to={"/aniqvatabiyfanlar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Aniq va tabiy fanlar kafedrasi
+                            </li>
+                          </Link>
                         </ul>
                       </li>
 
@@ -374,12 +426,16 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Markazlar
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Raqamli texnologiyalari markazi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Axborot-resurs markazi
-                          </li>
+                          <Link to={"/raqamli"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Raqamli texnologiyalari markazi
+                            </li>
+                          </Link>
+                          <Link to={"/axborat"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Axborot-resurs markazi
+                            </li>
+                          </Link>
                         </ul>
                       </li>
 
@@ -388,70 +444,111 @@ const Header = () => {
                         Bo‘limlar
                         {/* Ichki menyu */}
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60 border">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            O‘quv-uslubiy boshqarma
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Ta‘lim sifatini nazorat qilish bo‘limi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Jismoniy va yuridik shaxslarning murojatlari bilan
-                            ishlash, nazorat va monitoring sektori
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Yoshlar bilan ishlash ma‘naviyat va ma‘rifat bo‘limi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Ilmiy tadqiqotlar, innovatsiyalar sektori
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Talabalarni turar joy bilan ta‘minlash ishlarini
-                            muvofiqlashtiruvchi bo‘lim
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Psixolog
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Iqtidorli talabalarning ilmiy-tadqiqot faolyatini
-                            tashkil etish sektori
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Buxgalteriya
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Bosh auditor
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Xodimlar bo‘limi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Xalqaro hamkorlik bo‘limi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            1-bo‘lim
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Marketing va talabalar amaliyoti bo‘lim
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Yuristkonsult
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Matbuot kotibi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Reja-moliya bo‘limi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Devonxona va arxiv bo‘limi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Sirtqi bo‘lim
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Korrupsiyaga qarshi kurashish "Komplaens-nazorat"
-                            tizmini boshqarish bo‘limi
-                          </li>
+                          <Link to={"/uslubiy"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              O‘quv-uslubiy boshqarma
+                            </li>
+                          </Link>
+                          <Link to={"/nazorat"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Ta‘lim sifatini nazorat qilish bo‘limi
+                            </li>
+                          </Link>
+                          <Link to={"/yurdek"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Jismoniy va yuridik shaxslarning murojatlari bilan
+                              ishlash, nazorat va monitoring sektori
+                            </li>
+                          </Link>
+                          <Link to={"/ishlash"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Yoshlar bilan ishlash ma‘naviyat va ma‘rifat
+                              bo‘limi
+                            </li>
+                          </Link>
+                          <Link to={"/tadqiqot"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Ilmiy tadqiqotlar, innovatsiyalar sektori
+                            </li>
+                          </Link>
+                          <Link to={"/turarjoy"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Talabalarni turar joy bilan ta‘minlash ishlarini
+                              muvofiqlashtiruvchi bo‘lim
+                            </li>
+                          </Link>
+                          <Link to={"/psixolog"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Psixolog
+                            </li>
+                          </Link>
+                          <Link to={"/talabalariq"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Iqtidorli talabalarning ilmiy-tadqiqot faolyatini
+                              tashkil etish sektori
+                            </li>
+                          </Link>
+                          <Link to={"/bugalterya"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Buxgalteriya
+                            </li>
+                          </Link>
+                          <Link to={"/auditor"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Bosh auditor
+                            </li>
+                          </Link>
+                          <Link to={"/xodimlarbolimi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Xodimlar bo‘limi
+                            </li>
+                          </Link>
+                          <Link to={"/hamkorlik"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Xalqaro hamkorlik bo‘limi
+                            </li>
+                          </Link>
+                          <Link to={"/birinchi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              1-bo‘lim
+                            </li>
+                          </Link>
+                          <Link to={"/marketing"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Marketing va talabalar amaliyoti bo‘lim
+                            </li>
+                          </Link>
+                          <Link to={"/konsolt"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Yuristkonsult
+                            </li>
+                          </Link>
+                          <Link to={"/matbuat"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Matbuot kotibi
+                            </li>
+                          </Link>
+                          <Link to={"/rejamoliya"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Reja-moliya bo‘limi
+                            </li>
+                          </Link>
+                          <Link to={"/devanxona"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Devonxona va arxiv bo‘limi
+                            </li>
+                          </Link>
+                          <Link to={"/sirtqi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Sirtqi bo‘lim
+                            </li>
+                          </Link>
+                          <Link to={"/kurash"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Korrupsiyaga qarshi kurashish "Komplaens-nazorat"
+                              tizmini boshqarish bo‘limi
+                            </li>
+                          </Link>
                         </ul>
                       </li>
 
@@ -459,12 +556,11 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         O‘quv jarayoni
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Dars jadvali
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            O‘quv dasturlari
-                          </li>
+                          <Link to={"/dasturlari"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              O'quv dasturlari
+                            </li>
+                          </Link>
                         </ul>
                       </li>
                     </ul>
@@ -494,19 +590,27 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         O‘quv jarayoni
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Yakuniy nazorat savollar
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Malaka talablari
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            O‘quv rejalar
-                          </li>
+                          <Link to={"/yakuniynazoratsavolar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Yakuniy nazorat savollar
+                            </li>
+                          </Link>
+                          <Link to={"/malakatalabalar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Malaka talablari
+                            </li>
+                          </Link>
+                          <Link to={"/uquvrejalar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              O‘quv rejalar
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            O‘quv dasturlari
-                          </li>
+                          <Link to={"/uquvdasturlari"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              O‘quv dasturlari
+                            </li>
+                          </Link>
                         </ul>
                       </li>
 
@@ -514,59 +618,81 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Ilmiy faoliyat
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Ilmiy to‘plam va ommabop maqolalar
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Istiqboldagi rejalar
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Konferensiyalar
-                          </li>
+                          <Link to={"/ilmiytoplam"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Ilmiy to‘plam va ommabop maqolalar
+                            </li>
+                          </Link>
+                          <Link to={"/rejalar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Istiqboldagi rejalar
+                            </li>
+                          </Link>
+                          <Link to={"/konferinsiyalar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Konferensiyalar
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Ilmiy faoliyat e‘lon va yangiliklar
-                          </li>
+                          <Link to={"/ilmiyfaolyatelon"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Ilmiy faoliyat e‘lon va yangiliklar
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Mening innovatsiyon g‘oyam
-                          </li>
+                          <Link to={"/meninggoyam"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Mening innovatsiyon g‘oyam
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Filial loyihalar
-                          </li>
+                          <Link to={"/avtoreferatlar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Aftoreferatlar
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Aftoreferatlar
-                          </li>
+                          <Link to={"/ilmiyjurnallar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Ilmiy jurnallar
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Ilmiy jurnallar
-                          </li>
+                          <Link to={"/filialkengashi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Filial kengashi
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Filial kengashi
-                          </li>
+                          <Link to={"/tadqiqotyunalish"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Ilmiy tadqiqot yo‘nalishlar
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Ilmiy tadqiqot yo‘nalishlar
-                          </li>
+                          <Link to={"/ustozshogirt"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Ustoz-shogirt maktabi
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Ustoz-shogirt maktabi
-                          </li>
+                          <Link to={"/nashirishlari"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Nashr ishlari
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Nashr ishlari
-                          </li>
+                          <Link to={"/olimlarmaktabi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Yosh olimlar maktabi
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Yosh olimlar maktabi
-                          </li>
-
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Ilmiy-tadqiqot faolyati
-                          </li>
+                          <Link to={"/ilmiytadqiqot"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Ilmiy-tadqiqot faolyati
+                            </li>
+                          </Link>
                         </ul>
                       </li>
 
@@ -574,18 +700,26 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Ma‘naviy-ma‘rifiy faoliyat
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Talabalar hayoti
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Tyutor faolyati
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Filial psixologi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Yotoqxona
-                          </li>
+                          <Link to={"/talabalarhayoti"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Talabalar hayoti
+                            </li>
+                          </Link>
+                          <Link to={"/tyutor"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Tyutor faolyati
+                            </li>
+                          </Link>
+                          <Link to={"/psixologi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Filial psixologi
+                            </li>
+                          </Link>
+                          <Link to={"/yotoqxona"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Yotoqxona
+                            </li>
+                          </Link>
                         </ul>
                       </li>
 
@@ -593,34 +727,53 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Moliyaviy faoliyat
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Shartnomalar namunasi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Harajatlar smetasi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Tuzulgan Shartnomalar
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Davlat haridlari to‘g‘risidagi malumotlar
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Mansabdor shaxslarning xizmat safarlari va xorijdan
-                            tashrif buyurgan mehmonlarni kutib olish harajatlari
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Harid qilinishi rejalashtirilgan tovarlari
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Davlat haridlari va invesstitsiya loyihalari
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Tasdiqlangan yillik harajatlar smetasi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Kuchmas mulklar to‘g‘risidagi
-                          </li>
+                          <Link to={"/namunasi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Shartnomalar namunasi
+                            </li>
+                          </Link>
+                          <Link to={"/harajatlarsmetasi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Harajatlar smetasi
+                            </li>
+                          </Link>
+                          <Link to={"/shartnomalar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Tuzulgan Shartnomalar
+                            </li>
+                          </Link>
+                          <Link to={"/haridlari"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Davlat haridlari to‘g‘risidagi malumotlar
+                            </li>
+                          </Link>
+                          <Link to={"/masabdorshaxslar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Mansabdor shaxslarning xizmat safarlari va
+                              xorijdan tashrif buyurgan mehmonlarni kutib olish
+                              harajatlari
+                            </li>
+                          </Link>
+                          <Link to={"/haridqilinishi"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Harid qilinishi rejalashtirilgan tovarlari
+                            </li>
+                          </Link>
+                          <Link to={"/haridlari"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Davlat haridlari va invesstitsiya loyihalari
+                            </li>
+                          </Link>
+                          <Link to={"/harajatlar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Tasdiqlangan yillik harajatlar smetasi
+                            </li>
+                          </Link>
+                          <Link to={"/kuchmasmulklar"}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Kuchmas mulklar to‘g‘risidagi
+                            </li>
+                          </Link>
                         </ul>
                       </li>
 
@@ -628,23 +781,33 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Ta‘lim sifati
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Ta‘lim dasturi katalogi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Yo‘l haritasi
-                          </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Talabalar tashabbusi
-                          </li>
+                          <Link to={'/katalogii'}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Ta‘lim dasturi katalogi
+                            </li>
+                          </Link>
+                          <Link to={'/yulxaretasi'}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Yo‘l haritasi
+                            </li>
+                          </Link>
+                          <Link to={'/tashabbusi'}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Talabalar tashabbusi
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Anonim so‘rovnoma
-                          </li>
+                          <Link to={'/anonim'}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Anonim so‘rovnoma
+                            </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
-                            Ta‘lim sifat so‘rovnoma
-                          </li>
+                          <Link to={'/sorovnomasi'}>
+                            <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                              Ta‘lim sifat so‘rovnoma
+                            </li>
+                          </Link>
                         </ul>
                       </li>
                     </ul>
@@ -674,47 +837,74 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Bakalavriat
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                         <Link to={'/eslatma'}>
+                         <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Eslatma
                           </li>
+                         </Link>
+                          <Link to={'/qabulnizomi'}>
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Qabul nizomi
                           </li>
+                          </Link>
+                          <Link to={'/qabulkvotasi'}>
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Qabul kvotasi
                           </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          </Link>
+                         <Link to={'/tuplami'}>
+                         <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Hujjatlar to‘plami
                           </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                         </Link >
+                         <Link to={'/fanlari'}>
+                         <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Imtihon fanlari ro‘yxati
                           </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                         </Link>
+                         <Link to={'/kommisiyasi'}>
+                         <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Qabul komissiyasi joylashuv o‘rni
                           </li>
+                         </Link>
+                          <Link to={'/kallmarkaz'}>
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Kall markazi
                           </li>
+                          </Link>
+                          <Link to={'/utishballari'}> 
+                          
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             O‘tish ballari
-                          </li>
+                          </li> 
+                          </Link>
+                          <Link to={'/keyingi'}>
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Ikkinchi va undan keyingi oliy ta‘lim
                           </li>
+                          </Link>
+                          <Link to={'/tiklash'}>
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             O‘qishni ko‘chirish qayta tiklash
                           </li>
+                          </Link>
+                          <Link to={'/kuziojizlar'}>
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Ko‘zi ojizlar uchun o‘tkaziladigan fan bo‘yicha
                             kirish imtihonlarining dasturlari
                           </li>
+                          </Link>
 
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                        <Link to={'/bitiruvchialar'}>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Texnikum bitiruvchilari qabul qilish
                           </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                        </Link>
+                         <Link to={'/imtixonlar'}>
+                         <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Ijodiy intihonlar
                           </li>
+                         </Link>
                         </ul>
                       </li>
                     </ul>
@@ -743,39 +933,55 @@ const Header = () => {
                       <li className="hover:bg-blue-700 px-4 py-2 cursor-pointer text-black relative group">
                         Bakalavriat
                         <ul className="absolute left-full top-0 shadow-lg w-64 bg-white text-black hidden group-hover:block overflow-y-auto max-h-60">
+                          <Link to={'/yuriqnoma'}>
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Yo‘riqnoma
                           </li>
+                          </Link>
+                          <Link to={'/kontingent'}>
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Kontingent
                           </li>
+                          </Link>
+                          <Link to={'/darsjadvali'}>
                           <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Dars jadvali
                           </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                          </Link>
+                        <Link to={'/stipendiya'}>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Stipendiyalar
                           </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                        </Link>
+                        <Link to={'/talabalar'}>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Iqtidorli talabalar
                           </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                        </Link>
+                      <Link to={'/imtihonlari'}>
+                      <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Davlat imtihonlari
                           </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                      </Link>
+                        <Link to={'/bitruv'}>
+                        <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Bitiruv malakaviy ish himoyasi
                           </li>
-                          <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
+                        </Link>
+                       <Link to={'/odobaxloq'}>
+                       <li className="hover:bg-gray-200 px-4 py-2 cursor-pointer">
                             Odob ahloq qoidalari
                           </li>
+                       </Link>
                         </ul>
                       </li>
                     </ul>
                   )}
                 </li>
               </ul>
-              <div>
+              {/* <div>
                 <ButtonWithModal />
-              </div>
+              </div> */}
               <div>
                 {/* Sayt xaretasi tugmasi
                 <ul>
