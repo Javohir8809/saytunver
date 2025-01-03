@@ -30,7 +30,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-[#1B4D3E] text-white py-10 mt-10">
+    <footer className="bg-[#1B4D3E] text-white py-10 mt-[200px]">
       <div className="container max-w-[1200px] mx-auto px-5">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Asosiy menyu */}

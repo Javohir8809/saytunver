@@ -133,6 +133,7 @@ import Iqtidorlitalabalar from "../page/Foydalanuvchiqismi/Talabalarga/Bakalavri
 import Odobahloqqoidalari from "../page/Foydalanuvchiqismi/Talabalarga/Bakalavriat/Odobahloqqoidalari";
 import Stipendiyalar from "../page/Foydalanuvchiqismi/Talabalarga/Bakalavriat/Stipendiyalar";
 import Yuriqnoma from "../page/Foydalanuvchiqismi/Talabalarga/Bakalavriat/Yuriqnoma";
+import Nazorat from "../page/Foydalanuvchiqismi/Kamera/Nazorat";
 
 const RoutesComponent = () => {
   return (
@@ -225,7 +226,7 @@ const RoutesComponent = () => {
         <Route path="/bugalterya" element={<Bugalterya />} />
         <Route path="/auditor" element={<Boshauditor />} />
         <Route path="/xodimlarbolimi" element={<Hodimlarbolimi />} />
-        <Route path="/hamkorlik" element={<Xalqarohamkorlikbulimi />} />
+        <Route path="/xalqaro-hamkorlik" element={<Xalqarohamkorlikbulimi />} />
         <Route path="/birinchi" element={<Birinchibulim />} />
         <Route path="/marketing" element={<Marketingvatalabalar />} />
         <Route path="/konsolt" element={<Yuristkonsolt />} />
@@ -313,6 +314,7 @@ const RoutesComponent = () => {
         <Route path="/odobaxloq" element={<Odobahloqqoidalari />} />
         <Route path="/stipendiya" element={<Stipendiyalar />} />
         <Route path="/yuriqnoma" element={<Yuriqnoma/>} />
+        <Route path="/nazorat" element={<Nazorat/>}/>
 
 
 
