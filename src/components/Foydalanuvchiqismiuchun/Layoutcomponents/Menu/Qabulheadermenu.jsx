@@ -20,7 +20,7 @@ const menuSections = [
       { label: "Call markazi", to: "/" },
       { label: "O‘tish ballari", to: "/" },
       { label: "Ikkinchi ва undan keyingi oliy ta‘lim", to: "/" },
-      { label: "O‘qishni ko‘chириш qayта tikлаш", to: "/" },
+      { label: "O‘qishni ko‘chirish va qayta tiklash", to: "/" },
     ],
   },
   {
