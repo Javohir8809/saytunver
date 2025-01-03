@@ -259,7 +259,7 @@ const RoutesComponent = () => {
           path="/tadqiqotyunalish"
           element={<Ilmiytadqiqotyunalishlar />}
         />
-        <Route path="/ilmiytoplam" element={<Ilmiytoplam />} />
+        <Route path="/ilmiy/toplam" element={<Ilmiytoplam />} />
         <Route path="/rejalar" element={<Istiqboldagirejalar />} />
         <Route path="/konferinsiyalar" element={<Konferinsiyalar />} />
         <Route path="/meninggoyam" element={<Meninggoyam />} />
