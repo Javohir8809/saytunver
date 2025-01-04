@@ -25,7 +25,8 @@ const Jonli = () => {
             </button>
             <button className="flex items-center  bg-blue-600 text-white text-sm font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition">
               <FaClock className="mr-2 text-lg" />
-              IMTIXON VAQTLARI
+
+              <a href="https://drive.google.com/file/d/1B22nvt91UWOmlADlcyXXFU7jTSxOxYTw/view?usp=sharing">IMTIXON VAQTLARI</a>
             </button>
           </div>
         </div>

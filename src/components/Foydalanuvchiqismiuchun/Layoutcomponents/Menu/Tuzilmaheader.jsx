@@ -58,7 +58,7 @@ const menuSections = [
     title: "Bo‘limlar",
     links: [
       { label: "Xodimlar bo‘limi", to: "/" },
-      { label: "Xalqaro hamkorlik bo‘limi", to: "/kurash" },
+      { label: "Xalqaro hamkorlik bo‘limi", to: "" },
       { label: "Marketing va talabalar amaliyoti bo‘lim", to: "/" },
       { label: "Yuristkonsult", to: "/" },
       { label: "Reja-moliya bo‘limi", to: "/" },
@@ -69,7 +69,7 @@ const menuSections = [
     links: [
       { label: "Devonxona va arxiv bo‘limi", to: "/" },
       { label: "Sirtqi bo‘lim", to: "/" },
-      { label: "Korrupsiyaga qarshi kurashish 'Komplaens-nazorat' tizimini boshqarish bo‘limi", to: "/" },
+      { label: "Korrupsiyaga qarshi kurashish 'Komplaens-nazorat' tizimini boshqarish bo‘limi", to: "/kurash" },
     ],
   },
 ];
