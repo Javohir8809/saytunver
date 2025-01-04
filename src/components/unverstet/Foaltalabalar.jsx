@@ -17,7 +17,7 @@ const Foaltalabalar = () => {
     />
     <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white p-3 text-center">
       <h3 className="text-lg m-0 line-clamp-2">Jaloliddin Mahmudov Dilshod O‘g'li</h3>
-      <p className="text-sm mt-1 line-clamp-2">Guruhi:M_21_02</p>
+      {/* <p className="text-sm mt-1 line-clamp-2">Guruhi:M_21_02</p> */}
     </div>
   </div>
 
@@ -29,7 +29,7 @@ const Foaltalabalar = () => {
     />
     <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white p-3 text-center">
       <h3 className="text-lg m-0 line-clamp-2">Nasrulloyeva Rayhona Noibjon qizi</h3>
-      <p className="text-sm mt-1 line-clamp-2">Guruhi:M_21_02</p>
+      {/* <p className="text-sm mt-1 line-clamp-2">Guruhi:M_21_02</p> */}
     </div>
   </div>
 
@@ -41,7 +41,7 @@ const Foaltalabalar = () => {
     />
     <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white p-3 text-center">
       <h3 className="text-lg m-0 line-clamp-2">Yusupova Gulnoza Ma'rufjon qizi</h3>
-      <p className="text-sm mt-1 line-clamp-2">Guruhi:FT_22_09</p>
+      {/* <p className="text-sm mt-1 line-clamp-2">Guruhi:FT_22_09</p> */}
     </div>
   </div>
 </div>

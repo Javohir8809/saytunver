@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Foydalanuvchiqismiuchun/Layoutcomponents/Header";
 import RoutesComponent from "./routes/RoutesComponent";
 import Footer from "./components/Foydalanuvchiqismiuchun/Layoutcomponents/Footer";
+import "./App.css";
 
 const App = () => {
   return (

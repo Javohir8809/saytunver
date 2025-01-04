@@ -9,7 +9,7 @@ const YangilikDetails = () => {
   const apiUrl = import.meta.env.VITE_REACT_NEWS2_URL; // API URL
 
   useEffect(() => {
-    // API dan ma'lumot olish
+    
     fetch(`${apiUrl}/${id}`)
       .then((response) => {
         console.log("Response:", response);
@@ -20,7 +20,7 @@ const YangilikDetails = () => {
       })
       .then((data) => {
         console.log("Data:", data);
-        setNews(data); // Yangilik ma'lumotini saqlash
+        setNews(data); 
         setLoading(false);
       })
       .catch((error) => {

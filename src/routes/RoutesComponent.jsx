@@ -134,6 +134,7 @@ import Odobahloqqoidalari from "../page/Foydalanuvchiqismi/Talabalarga/Bakalavri
 import Stipendiyalar from "../page/Foydalanuvchiqismi/Talabalarga/Bakalavriat/Stipendiyalar";
 import Yuriqnoma from "../page/Foydalanuvchiqismi/Talabalarga/Bakalavriat/Yuriqnoma";
 import Nazorat from "../page/Foydalanuvchiqismi/Kamera/Nazorat";
+import Details from "../components/Details";
 
 const RoutesComponent = () => {
   return (
@@ -144,7 +145,7 @@ const RoutesComponent = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/news/:id" element={<YangilikDetails />} />
         <Route path="/news2/:id" element={<ElonlarDetails />} />
-
+        <Route path="details/:id" element={<Details/>}/>
         {/* Qo'shimcha sahifalar */}
         <Route
           path="/oliy-talim-yangiliklari"

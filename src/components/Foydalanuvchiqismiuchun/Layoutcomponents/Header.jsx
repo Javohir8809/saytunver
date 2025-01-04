@@ -119,9 +119,7 @@ const Header = () => {
             <Faoliyatheadermenu />
             <Qabulheadermenu />
             <Talabalargaheadermenu />
-            <a href="/" className="rounded-full px-3 py-2 text-xs font-semibold bg-blue-500 text-white">
-              {t("Kirish")}
-            </a>
+           
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -144,7 +142,7 @@ const Header = () => {
                 <FaTimes className="text-gray-800 dark:text-gray-200 text-xl" />
               </button>
             </div>
-            <div className="p-4 space-y-4">
+            <div className="p-4 space-y-4 ">
               <FilialHeaderMenu />
               <Yangiliklarheadermenu />
               <Tuzilmaheader />

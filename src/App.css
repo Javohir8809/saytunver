@@ -1,0 +1,9 @@
+/* App.css */
+body {
+    @apply bg-white text-black transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-black text-white transition-colors duration-300;
+  }
+  

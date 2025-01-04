@@ -92,8 +92,8 @@ const YangiliklarHeaderMenu = () => {
   );
 
   return (
-    <div className="dark:text-gray-300">
-      <ul className="flex items-center justify-center font-semibold lg:flex-row">
+    <div className="dark:text-gray-300 ">
+      <ul className="flex items-center justify-center font-semibold  ">
         {/* Настольное меню */}
         <li className="relative group hidden lg:block px-3 py-2">
           <button
@@ -104,17 +104,17 @@ const YangiliklarHeaderMenu = () => {
           </button>
           <div
             ref={menuRef}
-            className={`absolute top-full ${menuPosition} mt-3 bg-white dark:bg-gray-800 shadow-lg rounded-xl w-[1280px] p-6 z-50
-                       opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out`}
+            className={`absolute top-full ${menuPosition} mt-3 bg-white dark:bg-gray-800 shadow-lg rounded-xl mx-auto justify-center container w-[600px] p-6 z-50
+                         opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out`}
           >
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-4 gap-0">
               {menuSections.map(renderMenuSection)}
             </div>
           </div>
         </li>
 
         {/* Мобильное меню */}
-        <li className="block lg:hidden w-full">
+        <li className="block lg:hidden ">
           <button
             onClick={toggleMobileMenu}
             className="w-full text-left px-4 py-2 text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded-md flex items-center justify-between"
