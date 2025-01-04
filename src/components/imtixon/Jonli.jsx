@@ -17,7 +17,8 @@ const Jonli = () => {
                 <FaCircle className="animate-ping text-xs" />
                 <FaCircle className="absolute text-white text-xs opacity-70" />
               </div>
-              JONLI KO'RISH
+              <a href="https://live.samdukf.uz"> JONLI KO'RISH</a>
+             
             </button>
             <button className="flex items-center bg-blue-600 text-white text-sm font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition mt-4 md:mt-0">
               <FaClock className="mr-2 text-lg" />
