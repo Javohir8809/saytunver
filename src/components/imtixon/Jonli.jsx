@@ -1,21 +1,17 @@
 import React from 'react';
-import rasim from '../../assets/img/Amerka.jpg';
+import rasim from '../../assets/kameraimg/97f85629e28ad9389b2a8ed836816c48.png';
 import { FaCircle, FaClock } from 'react-icons/fa';
 
 const Jonli = () => {
   return (
-    <div className="container mx-auto max-w-[1210px] px-2">
+    <div className="container mx-auto max-w-[1210px] px-2 rounded-xl">
       <div className="bg-[#c2cbcd] h-[390px] flex justify-between">
         <div className="pl-10 pt-8">
-          <h2 className="text-lg font-bold">Imtihonlar</h2>
-          <p className="w-[350px] pt-5">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex laborum
-            quia aut ipsum ea. Quia, ut sed laboriosam iste ipsam beatae quasi
-            tempora quaerat. Ullam aperiam quia optio saepe maiores. Accusantium,
-            rerum libero quae ipsam cum aut repudiandae corporis quas vero nemo
-            ipsa
+          <h1 className="text-lg font-lato text-[44px]">Imtihonlar</h1>
+          <p className="w-[370px] pt-5 text-[20px]">
+          Samarqand davlat universitetining Kattaqo‘rg‘on filialida “2024-2025 o‘quv yili birinchi yarim yillik yakuniy nazoratlarini o‘tkazish to‘g‘risida” 2024-yil 16-dekabrdagi 150-ij sonli buyrug‘i asosida
           </p>
-          <div className="flex gap-4 mt-[100px]">
+          <div className="flex gap-4 mt-[80px]">
             <button className="flex items-center bg-red-600 text-white text-sm font-bold py-2 px-4 rounded-lg shadow-md hover:bg-red-700 transition">
               <div className="flex items-center justify-center mr-2">
                 <FaCircle className="animate-ping text-xs" />
@@ -30,20 +26,9 @@ const Jonli = () => {
             </button>
           </div>
         </div>
-        <div>
-          {/* Video komponenti */}
-          <video
-            controls
-            width="600"
-            className="rounded-lg py-5 px-5 pt-10"
-            autoPlay
-          >
-            <source
-              src="https://www.youtube.com/live/Ae0cQgmJgeM?si=cugDSaGEV3-sVTVj"
-              type="video/mp4"
-            />
-            Brauzeringiz video formatini qo‘llab-quvvatlamaydi.
-          </video>
+        <div className='pb-10'>          
+           <img src={rasim} alt="" className=' py-5 px-5 pt-10 w-[550px] rounded-sm' />
+          
         </div>
       </div>
     </div>
