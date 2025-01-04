@@ -4,7 +4,7 @@ import { FaCircle, FaClock } from 'react-icons/fa';
 
 const Jonli = () => {
   return (
-    <div className="container mx-auto max-w-[1210px] px-2 rounded-xl">
+    <div className="container mx-auto max-w-[1210px] px-2 rounded-3xl">
       <div className="bg-[#c2cbcd] h-[390px] flex justify-between">
         <div className="pl-10 pt-8">
           <h1 className="text-lg font-lato text-[44px]">Imtihonlar</h1>

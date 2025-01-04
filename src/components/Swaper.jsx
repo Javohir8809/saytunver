@@ -32,7 +32,6 @@ export default function App() {
       <SwiperSlide><img className="w-full h-auto" src={rasimlar} alt="imgSamdukf" /></SwiperSlide>
       <SwiperSlide><img className="w-full h-auto" src={rasimlar3} alt="imgSamdukf" /></SwiperSlide>
       <SwiperSlide><img className="w-full h-auto" src={rasimlar4} alt="imgSamdukf" /></SwiperSlide>
-      <SwiperSlide><img className="w-full h-auto" src={rasimlar5} alt="imgSamdukf" /></SwiperSlide>
       <SwiperSlide><img className="w-full h-auto" src={rasimlar} alt="imgSamdukf" /></SwiperSlide>
       <SwiperSlide><img className="w-full h-auto" src={rasimlar} alt="imgSamdukf" /></SwiperSlide>
       <SwiperSlide><img className="w-full h-auto" src={rasimlar} alt="imgSamdukf" /></SwiperSlide>
