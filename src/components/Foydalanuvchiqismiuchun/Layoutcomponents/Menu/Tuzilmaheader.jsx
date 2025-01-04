@@ -58,7 +58,7 @@ const menuSections = [
     title: "Bo‘limlar",
     links: [
       { label: "Xodimlar bo‘limi", to: "/" },
-      { label: "Xalqaro hamkorlik bo‘limi", to: "/xalqaro-hamkorlik" },
+      { label: "Xalqaro hamkorlik bo‘limi", to: "/kurash" },
       { label: "Marketing va talabalar amaliyoti bo‘lim", to: "/" },
       { label: "Yuristkonsult", to: "/" },
       { label: "Reja-moliya bo‘limi", to: "/" },
