@@ -37,11 +37,11 @@ const menuSections = [
   {
     title: "Bo‘limlar",
     links: [
-      { label: "O‘quv-uslubiy boshqarma", to: "/" },
-      { label: "Ta‘lim sifatini nazorat qilish bo‘limi", to: "/" },
-      { label: "Jismoniy va yuridik shaxslarning murojatlari bilan ishlash", to: "/" },
+      { label: "O‘quv-uslubiy boshqarma", to: "/uslubiy" },
+      { label: "Ta‘lim sifatini nazorat qilish bo‘limi", to: "/nazorat" },
+      { label: "Jismoniy va yuridik shaxslarning murojatlari bilan ishlash", to: "/yurdek" },
       { label: "Yoshlar bilan ishlash ma‘naviyat va ma‘rifat bo‘limi", to: "/" },
-      { label: "Ilmiy tadqiqotlar, innovatsiyalar sektori", to: "/" },
+      { label: "Ilmiy tadqiqotlar, innovatsiyalar sektori", to: "/tadqiqot" },
     ],
   },
   {
@@ -49,7 +49,7 @@ const menuSections = [
     links: [
       { label: "Talabalarni turar joy bilan ta‘minlash bo‘limi", to: "/" },
       { label: "Psixolog", to: "/" },
-      { label: "Iqtidorli talabalarning ilmiy-tadqiqot faolyatini tashkil etish sektori", to: "/" },
+      { label: "Iqtidorli talabalarning ilmiy-tadqiqot faolyatini tashkil etish sektori", to: "/talabalar" },
       { label: "Buxgalteriya", to: "/" },
       { label: "Bosh auditor", to: "/" },
     ],
@@ -57,8 +57,8 @@ const menuSections = [
   {
     title: "Bo‘limlar",
     links: [
-      { label: "Xodimlar bo‘limi", to: "/" },
-      { label: "Xalqaro hamkorlik bo‘limi", to: "" },
+      { label: "Xodimlar bo‘limi", to: "/xodimlarbolimi" },
+      { label: "Xalqaro hamkorlik bo‘limi", to: "/xalqaro-hamkorlik" },
       { label: "Marketing va talabalar amaliyoti bo‘lim", to: "/" },
       { label: "Yuristkonsult", to: "/" },
       { label: "Reja-moliya bo‘limi", to: "/" },
@@ -67,7 +67,7 @@ const menuSections = [
   {
     title: "Bo‘limlar",
     links: [
-      { label: "Devonxona va arxiv bo‘limi", to: "/" },
+      { label: "Devonxona va arxiv bo‘limi", to: "/devanxona" },
       { label: "Sirtqi bo‘lim", to: "/" },
       { label: "Korrupsiyaga qarshi kurashish 'Komplaens-nazorat' tizimini boshqarish bo‘limi", to: "/kurash" },
     ],
