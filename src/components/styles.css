@@ -29,7 +29,7 @@
   background-color: #0056b3; /* Faol rang o'zgartirish */
 }
 
-/* Media Queries */
+/* Media Queriesd */
 @media (max-width: 1203px) {
   .mySwiper {
     padding-top: 100px;
