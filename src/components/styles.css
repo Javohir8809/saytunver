@@ -1,31 +1,54 @@
 .mySwiper {
-    width: 100%;
-    height: auto; /* Slayder balandligini moslashtiring */
+  width: 100%;
+  height: auto; /* Slayder balandligini moslashtiring */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f9f9f9; /* Orqa fon rangi */
+  border: 1px solid #ddd; /* Chegara */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soyalar */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #007bff; /* Tugmalar rangi */
+}
+
+.swiper-pagination-bullet {
+  background-color: #007bff; /* Faol rang */
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0056b3; /* Faol rang o'zgartirish */
+}
+
+/* Media Queries */
+@media (max-width: 1203px) {
+  .mySwiper {
+    padding-top: 100px;
   }
-  
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #f9f9f9; /* Orqa fon rangi */
-    border: 1px solid #ddd; /* Chegara */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soyalar */
+}
+@media (max-width: 788px) {
+  .mySwiper {
+    padding-top: 100px;
   }
-  
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: #007bff; /* Tugmalar rangi */
+}
+
+@media (max-width: 602px) {
+  .mySwiper {
+    padding-top: 150px !important;
   }
-  
-  .swiper-pagination-bullet {
-    background-color: #007bff; /* Faol rang */
-    opacity: 0.7;
+}
+
+@media (max-width: 390px) {
+  .mySwiper {
+    padding-top: 190px !important;
   }
-  
-  .swiper-pagination-bullet-active {
-    background-color: #0056b3; /* Faol rang o'zgartirish */
-  }
-  
+}
