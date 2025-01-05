@@ -4,30 +4,44 @@ import { FaCircle, FaClock } from 'react-icons/fa';
 
 const Jonli = () => {
   return (
-    <div className="container mx-auto max-w-[1210px] px-2 rounded-3xl">
-      <div className="bg-[#c2cbcd] h-[390px] flex flex-col md:flex-row justify-between">
-        <div className="pl-10 pt-8 md:pl-12 md:pt-10">
-          <h1 className="text-lg font-lato text-[32px] md:text-[44px]">Imtihonlar</h1>
-          <p className="w-full md:w-[370px] pt-5 text-[16px] md:text-[20px]">
-            Samarqand davlat universitetining Kattaqo‘rg‘on filialida “2024-2025 o‘quv yili birinchi yarim yillik yakuniy nazoratlarini o‘tkazish to‘g‘risida” 2024-yil 16-dekabrdagi 150-ij sonli buyrug‘i asosida
+    <div className="container mx-auto max-w-[1210px] px-4 py-6">
+      {/* Asosiy karta */}
+      <div className="bg-[#c2cbcd] rounded-2xl flex flex-col md:flex-row items-center justify-between shadow-lg overflow-hidden">
+        {/* Matn bo'limi */}
+        <div className="pl-6 pr-6 py-8 md:pl-12 md:py-10 flex-1">
+          <h1 className="text-2xl md:text-4xl font-bold font-lato text-gray-800">Imtihonlar</h1>
+          <p className="text-base md:text-lg text-gray-700 mt-4 md:mt-6 leading-relaxed">
+            Samarqand davlat universitetining Kattaqo‘rg‘on filialida “2024-2025 o‘quv yili birinchi yarim yillik 
+            yakuniy nazoratlarini o‘tkazish to‘g‘risida” 2024-yil 16-dekabrdagi 150-ij sonli buyrug‘i asosida.
           </p>
-          <div className="flex gap-4 mt-8 md:mt-[80px] flex-col md:flex-row">
-            <button className="flex items-center bg-red-600 text-white text-sm font-bold py-2 px-4 rounded-lg shadow-md hover:bg-red-700 transition">
-              <div className="flex items-center justify-center mr-2">
-                <FaCircle className="animate-ping text-xs" />
+          {/* Tugmalar */}
+          <div className="flex flex-col md:flex-row gap-4 mt-6 md:mt-10">
+            <a
+              href="https://live.samdukf.uz"
+              className="flex items-center justify-center bg-red-600 text-white text-sm md:text-base font-semibold py-3 px-5 rounded-lg shadow hover:bg-red-700 transition duration-300"
+            >
+              <div className="flex items-center justify-center relative mr-2">
+                <FaCircle className="animate-ping text-xs text-white" />
                 <FaCircle className="absolute text-white text-xs opacity-70" />
               </div>
-              <a href="https://live.samdukf.uz"> JONLI KO'RISH</a>
-             
-            </button>
-            <button className="flex items-center bg-blue-600 text-white text-sm font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition mt-4 md:mt-0">
+              JONLI KO'RISH
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1B22nvt91UWOmlADlcyXXFU7jTSxOxYTw/view?usp=sharing"
+              className="flex items-center justify-center bg-blue-600 text-white text-sm md:text-base font-semibold py-3 px-5 rounded-lg shadow hover:bg-blue-700 transition duration-300"
+            >
               <FaClock className="mr-2 text-lg" />
-              <a href="https://drive.google.com/file/d/1B22nvt91UWOmlADlcyXXFU7jTSxOxYTw/view?usp=sharing">IMTIXON VAQTLARI</a>
-            </button>
+              IMTIXON VAQTLARI
+            </a>
           </div>
         </div>
-        <div className="pb-10 mt-4 md:mt-0">
-          <img src={rasim} alt="Imtihon" className="py-5 px-5 pt-10 w-full md:w-[550px] rounded-sm" />
+        {/* Rasm bo'limi */}
+        <div className="flex-1">
+          <img
+            src={rasim}
+            alt="Imtihon"
+            className="w-full md:w-[550px] object-cover py-5 px-2 rounded-b-2xl md:rounded-none md:rounded-r-2xl"
+          />
         </div>
       </div>
     </div>
