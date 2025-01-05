@@ -105,7 +105,6 @@ const TuzilmaHeader = () => {
     setIsMobileMenuOpen((prevState) => !prevState);
   };
 
-  // Memoize menuSections for optimization
   const optimizedMenuSections = useMemo(() => menuSections, []);
 
   useEffect(() => {
