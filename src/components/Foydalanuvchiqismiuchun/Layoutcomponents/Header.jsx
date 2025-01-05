@@ -49,7 +49,7 @@ const Header = () => {
       {/* Top Bar */}
       <div className={`py-2 ${isDaltonicMode ? "daltonic" : ""}`}>
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <div className="flex items-center space-x-4 hidden md:flex">
+          <div className="flex items-center space-x-4  md:flex">
             <Link to="/bayroq">
               <img
                 src="/public/images/ramzlar/bayroq.png"
