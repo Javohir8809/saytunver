@@ -46,7 +46,6 @@ const Header = () => {
         Ushbu veb-sayt hozirda test rejimida ishlamoqda. Ba'zi funksiyalar mavjud bo'lmasligi yoki kutilganidek ishlamasligi mumkin.
       </marquee>
     </div>
-      {/* Top Bar */}
       <div className={`py-2 ${isDaltonicMode ? "daltonic" : ""}`}>
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center space-x-4  md:flex">
