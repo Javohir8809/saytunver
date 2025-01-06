@@ -34,7 +34,7 @@ const menuSections = [
       { label: "Ijodiy intihonlar", to: "/" },
 
 
-      {label: "Xorijiy vatandoshlar qabuli", to: "/vatandoshlarqabul"}
+      {label: "Xorijiy Abituriyentlar  qabuli", to: "/vatandoshlarqabul"}
     ],
   },
 ];
