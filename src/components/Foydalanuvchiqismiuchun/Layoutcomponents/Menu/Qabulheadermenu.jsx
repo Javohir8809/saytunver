@@ -32,6 +32,9 @@ const menuSections = [
       },
       { label: "Texnikum bitiruvchilari qabul qilish", to: "/" },
       { label: "Ijodiy intihonlar", to: "/" },
+
+
+      {label: "Xorijiy vatandoshlar qabuli", to: "/vatandoshlarqabul"}
     ],
   },
 ];
