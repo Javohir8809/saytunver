@@ -94,3 +94,4 @@ const Swaperkorupsiya = () => {
 };
 
 export default Swaperkorupsiya;
+
