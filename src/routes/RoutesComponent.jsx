@@ -135,7 +135,7 @@ import Stipendiyalar from "../page/Foydalanuvchiqismi/Talabalarga/Bakalavriat/St
 import Yuriqnoma from "../page/Foydalanuvchiqismi/Talabalarga/Bakalavriat/Yuriqnoma";
 import Nazorat from "../page/Foydalanuvchiqismi/Kamera/Nazorat";
 import Details from "../components/Details";
-import Xorijiyvatandoshlar from "../page/Foydalanuvchiqismi/Qabul24/Bakalavriat/Xorijiyvatandoshlar";
+import Xorijdanqabul from "../page/Foydalanuvchiqismi/Qabul24/Bakalavriat/Xorijdanqabul";
 
 const RoutesComponent = () => {
   return (
@@ -304,7 +304,7 @@ const RoutesComponent = () => {
         <Route path="/qabulnizomi" element={<Qabulnizomi />} />
         <Route path="/bitiruvchialar" element={<Texnikumbitiruvchilari />} />
         <Route path="/utishballari" element={<Utishballari />} />
-<Route path="/vatandoshlarqabul" element={<Xorijiyvatandoshlar/>}/>
+<Route path="/xorijdan-qabul" element={<Xorijdanqabul/>}/>
         {/* Talabalarga */}
            {/* Bakalavriat */}
 

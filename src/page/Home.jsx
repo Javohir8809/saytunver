@@ -9,7 +9,7 @@ import Haqida from "../components/unverstet/Haqida";
 
 const Home = () => {
   return (
-    <div className="">
+    <div >
       <Swaper />
       <div className="container mx-auto ">
         <Jonli/>
@@ -20,7 +20,6 @@ const Home = () => {
         <Fakultetlar />
         <Haqida/>
         <Foaltalabalar/>
-        
       </div>
     </div>
   );
